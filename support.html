@@ -1,95 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThryveFit Support</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #1f4d7a;
-            --primary-light: #2f6dad;
-            --bg: #f8f9fa;
-            --text: #333;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        header {
-            background: var(--primary);
-            color: white;
-            padding: 20px 10%;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        h1 { margin-bottom: 5px; font-size: 2rem; font-weight: 600; }
-        nav { margin-top: 10px; }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-        nav a:hover { color: #ffd369; }
-        .section {
-            padding: 40px 10%;
-            max-width: 800px;
-            margin: auto;
-        }
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        h3 { margin-top: 25px; color: var(--primary); }
-        ul { margin: 15px 0 0 20px; }
-        ul li { margin-bottom: 10px; }
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 15px;
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9rem;
-        }
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ThryveFit Support</title>
+  <meta name="description" content="Get help with ThryveFit—billing, subscriptions, account, and troubleshooting." />
+  <link rel="icon" href="./assets/images/THRYVEICON.png" />
+  <style>
+    :root { --bg:#0F0F0F; --surface:#1A1A1A; --surface2:#2A2A2A; --blue:#2563EB; --white:#FFF; --text:#E5E7EB; --muted:#9CA3AF; --success:#059669; --error:#DC2626; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:960px;margin:0 auto;padding:24px}
+    .header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+    .brand img{width:32px;height:32px;border-radius:8px}
+    .hero{padding:36px 0 8px}
+    h1{font-size:36px;margin:0 0 8px;letter-spacing:-0.3px}
+    p.lead{color:var(--text);max-width:760px;line-height:26px}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin:24px 0}
+    .card{background:var(--surface);border:1px solid var(--surface2);border-radius:16px;padding:20px}
+    .card h2{font-size:20px;margin:0 0 10px}
+    .card p, .card li{color:var(--text);line-height:22px}
+
+    .faq dt{font-weight:600;margin-top:12px}
+    .faq dd{margin:6px 0 0 0;color:var(--muted)}
+
+    footer{border-top:1px solid var(--surface2);margin-top:32px}
+    .foot{display:flex;flex-wrap:wrap;gap:16px;padding:20px 0;color:var(--muted);font-size:13px}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>ThryveFit Support</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="support.html">Support</a>
-        </nav>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <img src="./assets/images/THRYVEICON.png" alt="ThryveFit icon" />
+        <span>ThryveFit Support</span>
+      </div>
+      <a href="./index.html">← Marketing Page</a>
     </header>
 
-    <div class="section">
-        <h2>Need Help?</h2>
-        <p>We’re here to assist you. If you have technical issues, billing questions, or feedback, please contact us using the details below.</p>
+    <section class="hero">
+      <h1>How can we help?</h1>
+      <p class="lead">Use the resources below to resolve most issues quickly. If you still need help, contact us—our goal is fast, professional support.</p>
+    </section>
 
-        <h3>Contact Us</h3>
+    <section class="grid">
+      <article class="card">
+        <h2>Contact</h2>
         <p>Email: <a href="mailto:support@thryvefit.com">support@thryvefit.com</a></p>
+        <p>Business hours: Mon–Fri, 9:00–17:00 PT</p>
+      </article>
 
-        <h3>FAQs</h3>
+      <article class="card">
+        <h2>Billing & Subscriptions</h2>
         <ul>
-            <li><strong>How do I reset my password?</strong> Go to the login screen and click “Forgot Password.”</li>
-            <li><strong>How do I track a meal?</strong> Use the search bar, barcode scanner, or AI chat to log food.</li>
-            <li><strong>How can I cancel my subscription?</strong> Manage your subscription in the App Store under your account settings.</li>
+          <li>Subscriptions are managed by Apple. To cancel or change plans: Settings → Apple ID → Subscriptions → ThryveFit.</li>
+          <li>Trials convert to paid unless cancelled at least 24 hours before the period ends.</li>
+          <li>Prices: Monthly $9.99 • Annual $79.99 (regional pricing may vary).</li>
         </ul>
+      </article>
 
-        <h3>Policies</h3>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </div>
+      <article class="card">
+        <h2>Troubleshooting</h2>
+        <ul>
+          <li>Restore purchases: In the app, open Premium → Restore Purchases.</li>
+          <li>Data not syncing: Ensure network access and restart the app.</li>
+          <li>Voice logging: Grant microphone permission in iOS Settings → ThryveFit.</li>
+          <li>Camera scanning: Grant camera permission in iOS Settings → ThryveFit.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>FAQ</h2>
+        <dl class="faq">
+          <dt>What does Premium include?</dt>
+          <dd>AI meal plans, voice food logging, advanced analytics, custom workouts, and more.</dd>
+          <dt>Is my data private?</dt>
+          <dd>Yes. We use secure storage and follow least‑privilege access to protect your information.</dd>
+          <dt>How do I contact support?</dt>
+          <dd>Email <a href="mailto:support@thryvefit.com">support@thryvefit.com</a>. We typically respond within 1 business day.</dd>
+        </dl>
+      </article>
+
+      <article class="card">
+        <h2>Legal</h2>
+        <p><a href="https://thryvefit.com/terms" target="_blank" rel="noopener">Terms of Service</a> • <a href="https://thryvefit.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></p>
+        <p class="muted">Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period.</p>
+      </article>
+    </section>
 
     <footer>
-        &copy; 2025 ThryveFit. All rights reserved.
+      <div class="foot">© <span id="year"></span> ThryveFit • Professional fitness software</div>
     </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 </body>
-</html>
+</html> 
