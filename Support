@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThryveFit Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background: #1f4d7a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 { margin: 0; }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .section {
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            color: #1f4d7a;
+        }
+        footer {
+            background: #1f4d7a;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ThryveFit Support</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="support.html">Support</a>
+        </nav>
+    </header>
+
+    <div class="section">
+        <h2>Need Help?</h2>
+        <p>We’re here to assist you. If you have technical issues, billing questions, or feedback, please contact us using the details below.</p>
+
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:support@thryvefit.com">support@thryvefit.com</a></p>
+
+        <h3>FAQs</h3>
+        <ul>
+            <li><strong>How do I reset my password?</strong> Go to the login screen and click “Forgot Password.”</li>
+            <li><strong>How do I track a meal?</strong> Use the search bar, barcode scanner, or AI chat to log food.</li>
+            <li><strong>How can I cancel my subscription?</strong> Manage your subscription in the App Store under your account settings.</li>
+        </ul>
+
+        <h3>Policies</h3>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+
+    <footer>
+        &copy; 2025 ThryveFit. All rights reserved.
+    </footer>
+</body>
+</html>
