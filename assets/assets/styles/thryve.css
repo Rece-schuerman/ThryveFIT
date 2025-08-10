@@ -60,36 +60,53 @@ a:focus-visible, button:focus-visible, .cta:focus-visible{outline:none; box-shad
 .skip{position:absolute; left:-9999px; top:auto}
 .skip:focus{left:16px; top:16px; background:#0E0F11; color:#fff; padding:8px 12px; border-radius:8px; z-index:1000}
 
-/* ---------- Header / Nav (reverted to clean logo usage) ---------- */
+/* ---------- Header / Nav (clean logos + aligned Home button) ---------- */
 .site-header{position:relative; z-index:3}
 .nav{
   display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
-  padding:12px 0; border-bottom:1px solid rgba(255,255,255,.06);
+  padding:10px 0; border-bottom:1px solid rgba(255,255,255,.06);
 }
 .brand{display:inline-flex; align-items:center; gap:10px}
-.brand img{height:44px; width:auto}        /* smaller, tidier */
+.brand img{height:44px; width:auto}
 .wordmark{display:flex; justify-content:center}
-.wordmark img{height:40px; width:auto}     /* slightly smaller than icon */
-.nav-cta{display:flex; justify-content:end}
+.wordmark img{height:40px; width:auto}
+.nav-cta{
+  display:flex; justify-content:end; align-items:center;
+}
 
-/* CTA badge */
+/* App Store badge (Index) */
 .badge{
   display:inline-flex; align-items:center; gap:10px; padding:10px 14px;
   border-radius:12px; border:1px solid rgba(255,255,255,.12);
   background:linear-gradient(180deg, #15161A, #121317);
   color:#fff; font-weight:700; text-decoration:none;
+  transition:transform .14s ease, border-color .14s ease, background-color .14s ease;
 }
+.badge:hover{transform:translateY(-1px)}
 .badge[aria-disabled="true"]{opacity:.6; pointer-events:none}
 
+/* Home button (Support / Terms / Privacy) */
+.home-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:9px 14px; border-radius:12px;
+  background:#0f1013; color:#fff; text-decoration:none;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 8px 18px rgba(0,0,0,.25);
+  line-height:1; position:relative; top:-2px;   /* subtle nudge up for perfect visual alignment */
+  transition:transform .14s ease, background-color .14s ease, border-color .14s ease, box-shadow .14s ease;
+}
+.home-btn:hover{transform:translateY(-1px); background:#0e0f12; border-color:rgba(255,255,255,.2)}
+.home-btn svg{width:14px; height:14px}
+
 /* ---------- Hero ---------- */
-.hero{padding:34px 0 18px}
+.hero{padding:30px 0 16px}
 .hero h1{font-size:var(--fs-h1); letter-spacing:-.3px; margin:0 0 8px}
 .hero p{color:var(--text); margin:0 auto}
 
-/* ---------- Cards / Panels (minimal, no big icons) ---------- */
+/* ---------- Cards / Panels (compact) ---------- */
 .cards{
   display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-  gap:var(--gap); margin:34px 0;
+  gap:var(--gap); margin:30px 0;
 }
 .card, .panel{
   background:var(--surface-1); border:var(--border);
@@ -101,37 +118,23 @@ a:focus-visible, button:focus-visible, .cta:focus-visible{outline:none; box-shad
 .card p{color:var(--text); margin:0}
 .subtext{color:var(--muted); font-size:var(--fs-sub)}
 
-/* Compact feature bullets (no ticks/icons) */
+/* Compact feature bullets */
 .features{margin:10px 0 0; padding-left:18px}
 .features li{margin:4px 0}
 
-/* Media card (optional image) */
+/* Media card */
 .media-card{display:grid; gap:10px}
 .media{border-radius:10px; overflow:hidden; border:1px solid var(--surface-2); background:#0b0c0f}
 
 /* Split section */
-.split{display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); align-items:stretch; margin:44px 0}
+.split{display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); align-items:stretch; margin:40px 0}
 .split .panel h2{font-size:var(--fs-h2); margin:0 0 10px}
 .list{display:grid; gap:8px; margin-top:8px}
 .item{display:flex; gap:10px; align-items:flex-start}
 .item span:first-child{font-weight:700; color:var(--green)}
 
-/* ---------- Testimonials (clean & credible) ---------- */
-.testimonials{margin:10px 0 0}
-.testimonials h2{font-size:var(--fs-h2); margin:0 0 12px; text-align:center}
-.quote-grid{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-  gap:var(--gap);
-}
-.quote{
-  background:var(--surface-1); border:var(--border); border-radius:var(--radius);
-  padding:20px; box-shadow:var(--shadow)
-}
-blockquote{margin:0; color:var(--text); font-style:italic}
-.cite{margin-top:8px; color:var(--muted); font-size:var(--fs-sub)}
-
 /* ---------- Footer ---------- */
-footer{border-top:1px solid var(--surface-2); margin-top:44px}
+footer{border-top:1px solid var(--surface-2); margin-top:40px}
 .footer-grid{
   display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
   gap:var(--gap); padding:20px 0;
@@ -149,7 +152,7 @@ footer{border-top:1px solid var(--surface-2); margin-top:44px}
 
 /* ---------- Reduced Motion ---------- */
 @media (prefers-reduced-motion: reduce){
-  .card, .panel, .badge{transition:none}
+  .card, .panel, .badge, .home-btn{transition:none}
   .card:hover{transform:none}
 }
 
