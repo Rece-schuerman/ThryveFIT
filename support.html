@@ -3,64 +3,42 @@
 <head>
   <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>ThryveFit Support</title>
-  <meta name="description" content="Get help with billing, subscriptions, account, and troubleshooting." />
-  <style>
-    :root{--bg:#0F0F0F;--surface:#181818;--surface2:#2A2A2A;--blue:#2563EB;--white:#fff;--text:#E5E7EB;--muted:#9CA3AF;--radius:16px;--gap:24px}
-    *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text",Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:var(--blue);text-decoration:none;font-weight:600}a:hover{text-decoration:underline}
-    .container{max-width:960px;margin:0 auto;padding:var(--gap)}
-    .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px 0}
-    .brand{display:inline-flex;align-items:center;gap:12px}.brand img{height:48px;width:auto}
-    .wordmark{display:flex;justify-content:center}.wordmark img{height:44px;width:auto}
-    .nav-cta{display:flex;justify-content:end}
-    .cta{background:var(--blue);color:#fff;padding:10px 16px;border-radius:var(--radius)}
-    .hero{padding:32px 0 8px}h1{font-size:38px;margin:0 0 8px;letter-spacing:-.3px}
-    p.lead{color:var(--text);max-width:760px;line-height:28px;font-size:18px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--gap);margin:24px 0}
-    .card{background:var(--surface);border:1px solid var(--surface2);border-radius:var(--radius);padding:24px}
-    .card h2{font-size:20px;margin:0 0 10px}.card p,.card li{color:var(--text);line-height:22px}
-    .faq dt{font-weight:600;margin-top:12px}.faq dd{margin:6px 0 0 0;color:var(--muted)}
-    footer{border-top:1px solid var(--surface2);margin-top:32px}
-    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--gap);padding:24px 0}
-    .footer-grid a{color:var(--text)}.footer-grid a.active{color:var(--white);text-decoration:underline}
-    .copy{color:var(--muted);font-size:12px;text-align:center;padding:12px 0 36px}
-    @media (max-width:800px){.brand img{height:40px}.wordmark img{height:36px}}
-  </style>
+  <meta name="description" content="Help with billing, subscriptions, account, and troubleshooting."/>
+  <link rel="preload" href="assets/WORDMARK-WHITE.png" as="image" />
+  <link rel="stylesheet" href="assets/styles/thryve.css"/>
 </head>
 <body>
-  <div class="container">
-    <nav class="nav" role="navigation" aria-label="Primary">
-      <a class="brand" href="./index.html" aria-label="ThryveFit Home"><img src="assets/ICON-BLUE.png" alt="ThryveFit icon"/></a>
-      <div class="wordmark"><img src="assets/WORDMARK-WHITE.png" alt="ThryveFit"/></div>
-      <div class="nav-cta"><a class="cta" href="./index.html">← Back to Home</a></div>
-    </nav>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="./index.html" aria-label="ThryveFit Home">
+          <img src="assets/ICON-BLUE.png" width="48" height="48" alt="ThryveFit icon">
+        </a>
+        <div class="wordmark"><img src="assets/WORDMARK-WHITE.png" width="200" height="44" alt="ThryveFit"></div>
+        <div class="nav-cta"><a class="cta" href="./index.html">Home</a></div>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero">
-      <h1>How can we help?</h1>
-      <p class="lead">Use the resources below to resolve most issues quickly. If you still need help, contact us—our goal is fast, professional support.</p>
-    </section>
+  <main id="main">
+    <div class="container">
+      <section class="hero">
+        <h1>How can we help?</h1>
+        <p class="subtext" style="max-width:760px;margin:0 auto">Use the resources below to resolve most issues quickly. If you still need help, contact us—our goal is fast, professional support.</p>
+      </section>
 
-    <section class="grid" aria-label="Support Cards">
-      <article class="card"><h2>Contact</h2><p>Email: <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></p><p>Business hours: Mon–Fri, 9:00–17:00 PT</p></article>
-      <article class="card"><h2>Billing & Subscriptions</h2><ul>
-        <li>Subscriptions are managed by Apple. To cancel or change plans: Settings → Apple ID → Subscriptions → ThryveFit.</li>
-        <li>Trials convert to paid unless cancelled at least 24 hours before the period ends.</li>
-        <li>Prices: Monthly $9.99 • Annual $79.99 (regional pricing may vary).</li>
-      </ul></article>
-      <article class="card"><h2>Troubleshooting</h2><ul>
-        <li>Restore purchases: In the app, open Premium → Restore Purchases.</li>
-        <li>Data not syncing: Ensure network access and restart the app.</li>
-        <li>Voice logging: Grant microphone permission in iOS Settings → ThryveFit.</li>
-        <li>Camera scanning: Grant camera permission in iOS Settings → ThryveFit.</li>
-      </ul></article>
-      <article class="card"><h2>FAQ</h2><dl class="faq">
-        <dt>What does Premium include?</dt><dd>AI meal plans, voice logging, advanced analytics, custom workouts, and more.</dd>
-        <dt>Is my data private?</dt><dd>Yes. We use secure storage and least‑privilege access.</dd>
-        <dt>How do I contact support?</dt><dd>Email us; we typically respond within 1 business day.</dd>
-      </dl></article>
-    </section>
+      <section class="cards" aria-label="Support">
+        <article class="card"><h3>Contact</h3><p>Email: <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></p><p>Business hours: Mon–Fri, 9:00–17:00 PT</p></article>
+        <article class="card"><h3>Billing & Subscriptions</h3><p>Manage in iOS: Settings → Apple ID → Subscriptions → ThryveFit. Trials convert unless cancelled ≥24h before end.</p></article>
+        <article class="card"><h3>Troubleshooting</h3><p>Restore: Premium → Restore Purchases. Check network and restart the app if data isn’t syncing. Enable mic/camera permissions for logging and scanning.</p></article>
+        <article class="card"><h3>FAQ</h3><p>Premium includes AI meal plans, voice logging, advanced analytics, custom workouts, and more.</p></article>
+      </section>
+    </div>
+  </main>
 
-    <footer>
+  <footer>
+    <div class="container">
       <div class="footer-grid">
         <div><h4>Company</h4>
           <a class="active" href="./support.html">Support</a><br/>
@@ -72,8 +50,8 @@
         <div><h4>Legal</h4><p class="subtext">Subscriptions renew automatically unless cancelled at least 24 hours before period end.</p></div>
       </div>
       <div class="copy">© <span id="year"></span> ThryveFit. All rights reserved.</div>
-    </footer>
-  </div>
+    </div>
+  </footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
