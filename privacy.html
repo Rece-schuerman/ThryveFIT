@@ -4,25 +4,29 @@
   <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Privacy Policy • ThryveFit</title>
   <meta name="description" content="Privacy Policy for ThryveFit."/>
-  <link rel="preload" href="assets/WORDMARK-WHITE.png" as="image" />
+  <link rel="canonical" href="./privacy.html"/>
+  <link rel="preload" href="assets/WORDMARK-WHITE.png" as="image"/>
   <link rel="stylesheet" href="assets/styles/thryve.css"/>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="container">
       <nav class="nav" aria-label="Primary">
         <a class="brand" href="./index.html" aria-label="ThryveFit Home">
-          <img src="assets/ICON-BLUE.png" width="48" height="48" alt="ThryveFit icon">
+          <picture><source srcset="assets/ICON-BLUE.svg" type="image/svg+xml"><img src="assets/ICON-BLUE.png" width="56" height="56" alt="ThryveFit icon"></picture>
         </a>
-        <div class="wordmark"><img src="assets/WORDMARK-WHITE.png" width="200" height="44" alt="ThryveFit"></div>
+        <div class="wordmark">
+          <picture><source srcset="assets/WORDMARK-WHITE.svg" type="image/svg+xml"><img src="assets/WORDMARK-WHITE.png" width="220" height="48" alt="ThryveFit"></picture>
+        </div>
         <div class="nav-cta"><a class="cta" href="./index.html">Home</a></div>
       </nav>
     </div>
   </header>
 
   <main id="main" class="legal">
-    <div class="container">
+    <div class="container narrow">
       <section class="hero">
         <h1>Privacy Policy</h1>
         <p class="subtext">Last updated: <span id="updated"></span></p>
@@ -58,10 +62,10 @@
         </ul>
 
         <h2 id="share">3. Sharing</h2>
-        <p>We do not sell your personal data. We share only with service providers who help us operate the App (e.g., analytics, crash reporting) under confidentiality obligations, or when required by law.</p>
+        <p class="maxch">We do not sell your personal data. We share only with service providers who help us operate the App (e.g., analytics, crash reporting) under confidentiality obligations, or when required by law.</p>
 
         <h2 id="retention">4. Data Retention & Deletion</h2>
-        <p>We keep data only as long as needed for the purposes above. You may request deletion of your account and associated personal data by contacting us at <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a>. Deletion requests are processed within a reasonable period unless we must retain data to comply with legal obligations.</p>
+        <p class="maxch">We keep data only as long as needed for the purposes above. You may request deletion of your account and associated personal data by contacting us at <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a>. Deletion requests are processed within a reasonable period unless we must retain data to comply with legal obligations.</p>
 
         <h2 id="rights">5. Your Rights</h2>
         <ul>
@@ -70,24 +74,24 @@
         </ul>
 
         <h2 id="children">6. Children’s Privacy</h2>
-        <p>The App is not directed to children under 13 (or the minimum age in your jurisdiction). We do not knowingly collect data from children under 13.</p>
+        <p class="maxch">The App is not directed to children under 13 (or the minimum age in your jurisdiction). We do not knowingly collect data from children under 13.</p>
 
         <h2 id="security">7. Security</h2>
-        <p>We use reasonable technical and organizational measures to protect your information. No method of transmission or storage is 100% secure.</p>
+        <p class="maxch">We use reasonable technical and organizational measures to protect your information. No method of transmission or storage is 100% secure.</p>
 
         <h2 id="intl">8. International Users</h2>
-        <p>Your data may be processed in the United States or other locations where we or our providers operate and may be subject to local laws.</p>
+        <p class="maxch">Your data may be processed in the United States or other locations where we or our providers operate and may be subject to local laws.</p>
 
         <h2 id="changes">9. Changes to this Policy</h2>
-        <p>We may update this Privacy Policy. We will post the new date above. Continued use after changes means you accept the updated Policy.</p>
+        <p class="maxch">We may update this Privacy Policy. We will post the new date above. Continued use after changes means you accept the updated Policy.</p>
 
         <h2 id="contact">10. Contact</h2>
-        <p>Email: <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></p>
+        <p class="maxch">Email: <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></p>
       </article>
     </div>
   </main>
 
-  <a class="backtop" href="#top" aria-label="Back to top">↑</a>
+  <a class="backtop" href="#main" aria-label="Back to top">↑</a>
 
   <footer>
     <div class="container">
@@ -106,11 +110,9 @@
   </footer>
 
   <script>
-    const y = document.getElementById('year');
-    if (y) y.textContent = new Date().getFullYear();
-    const u = document.getElementById('updated');
-    if (u) u.textContent = new Date().toLocaleDateString();
-    const b = document.querySelector('.backtop');
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('updated').textContent = new Date().toLocaleDateString();
+    const back = document.querySelector('.backtop');
     const onScroll = () => {
       if (window.scrollY > window.innerHeight * 0.6) document.body.classList.add('show-backtop');
       else document.body.classList.remove('show-backtop');
