@@ -20,7 +20,9 @@
         <a class="brand" href="./index.html" aria-label="ThryveFit Home">
           <img src="assets/ICON-BLUE.png" width="44" height="44" alt="ThryveFit icon">
         </a>
-        <div class="wordmark"><img src="assets/WORDMARK-WHITE.png" width="200" height="40" alt="ThryveFit"></div>
+        <div class="wordmark">
+          <img src="assets/WORDMARK-WHITE.png" width="200" height="40" alt="ThryveFit">
+        </div>
         <div class="nav-cta">
           <!-- Replace with real App Store link when ready -->
           <a class="badge" href="#download" aria-disabled="true"> App Store</a>
@@ -60,16 +62,19 @@
           </ul>
         </article>
 
-        <article class="card media-card">
+        <!-- Advanced Analytics (clean, no image) -->
+        <article class="card">
           <h3>Advanced Analytics</h3>
-          <div class="media" aria-label="Analytics preview">
-            <img src="assets/sample-analytics-placeholder.png" alt="Charts and trends screenshot placeholder">
-          </div>
-          <p class="subtext">Progress charts, recovery cues, and trend detection engineered for smarter decisions.</p>
+          <p>Clear progress views and weekly insights engineered for smarter decisions.</p>
+          <ul class="features">
+            <li>Progress charts for workouts & nutrition</li>
+            <li>Trend detection and readiness cues</li>
+            <li>Weekly summaries that keep you on track</li>
+          </ul>
         </article>
       </section>
 
-      <!-- Premium (single panel; “Designed for Focus” removed) -->
+      <!-- Premium (single panel) -->
       <section aria-label="Premium">
         <div class="panel">
           <h2>Premium Features</h2>
@@ -81,10 +86,10 @@
         </div>
       </section>
 
-      <!-- CTA -->
-      <div id="download" class="center" style="margin-top:30px">
+      <!-- CTA (centered on all screens) -->
+      <div id="download" class="center" style="margin-top:30px; display:flex; flex-direction:column; align-items:center; gap:6px;">
         <a class="badge" href="#" aria-disabled="true"> App Store</a>
-        <p class="subtext" style="margin-top:6px">Requires iOS. Some features require ThryveFit Premium. Free trial available.</p>
+        <p class="subtext">Requires iOS. Some features require ThryveFit Premium. Free trial available.</p>
       </div>
     </div>
   </main>
