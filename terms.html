@@ -9,30 +9,36 @@
     *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text",Segoe UI,Roboto,Helvetica,Arial,sans-serif}
     a{color:var(--blue);text-decoration:none;font-weight:600}a:hover{text-decoration:underline}
     .container{max-width:960px;margin:0 auto;padding:var(--gap)}
-    .nav{display:flex;justify-content:space-between;align-items:center;padding:var(--gap) 0}
-    .brand{display:flex;align-items:center;gap:12px}.brand img{height:36px}
-    .header{display:flex;justify-content:center;padding:16px 0 8px}.header img{height:40px}
-    h1{font-size:38px;margin:24px 0 8px}h2{margin:24px 0 8px}p,li{color:var(--text);line-height:28px}
-    .card{background:var(--surface);border:1px solid var(--surface2);border-radius:var(--radius);padding:24px}
+    .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px 0}
+    .brand{display:inline-flex;align-items:center;gap:12px}.brand img{height:48px;width:auto}
+    .wordmark{display:flex;justify-content:center}.wordmark img{height:44px;width:auto}
+    .nav-cta{display:flex;justify-content:end}
+    .cta{background:var(--blue);color:#fff;padding:10px 16px;border-radius:var(--radius)}
+    h1{font-size:38px;margin:24px 0 8px}
+    h2{margin:24px 0 8px}
+    p,li{color:var(--text);line-height:28px}
+    .card{background:var(--surface);border:1px solid var(--surface2);border-radius:var(--radius);padding:24px;margin-top:12px}
     footer{border-top:1px solid var(--surface2);margin-top:32px}
-    .foot{color:var(--muted);font-size:13px;padding:20px 0}
+    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--gap);padding:24px 0}
+    .footer-grid a{color:var(--text)}.footer-grid a.active{color:var(--white);text-decoration:underline}
+    .copy{color:var(--muted);font-size:12px;text-align:center;padding:12px 0 36px}
+    @media (max-width:800px){.brand img{height:40px}.wordmark img{height:36px}}
   </style>
 </head>
 <body>
   <div class="container">
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Primary">
       <a class="brand" href="./index.html" aria-label="ThryveFit Home"><img src="assets/ICON-BLUE.png" alt="ThryveFit icon"/></a>
-      <a href="./index.html">← Back to Home</a>
+      <div class="wordmark"><img src="assets/WORDMARK-WHITE.png" alt="ThryveFit"/></div>
+      <div class="nav-cta"><a class="cta" href="./index.html">← Back to Home</a></div>
     </nav>
-
-    <div class="header"><img src="assets/WORDMARK-WHITE.png" alt="ThryveFit"/></div>
 
     <article class="card" role="article">
       <h1>Terms of Service</h1>
       <p><strong>Last updated:</strong> <span id="updated"></span></p>
 
       <h2>1. Overview</h2>
-      <p>ThryveFit (“we,” “us,” or “our”) provides mobile software and related services designed to help you track training and nutrition. By accessing or using ThryveFit, you agree to these Terms.</p>
+      <p>ThryveFit (“we,” “us,” or “our”) provides mobile software and related services designed to help you track training and nutrition. By accessing or using the App, you agree to these Terms.</p>
 
       <h2>2. Eligibility & Accounts</h2>
       <p>You must be at least 13 years old (or the minimum age in your jurisdiction) to use the App. If you create an account, you are responsible for maintaining its security and for all activity under your account.</p>
@@ -41,20 +47,20 @@
       <ul>
         <li>Premium features are offered via auto‑renewing subscriptions managed by Apple. Prices are displayed in‑app and may vary by region.</li>
         <li>Trials convert to paid unless cancelled at least 24 hours before the trial ends.</li>
-        <li>Manage, cancel, or change your plan in iOS: <em>Settings → Apple ID → Subscriptions → ThryveFit</em>.</li>
+        <li>Manage or cancel in iOS: <em>Settings → Apple ID → Subscriptions → ThryveFit</em>.</li>
         <li>Charges are billed to your Apple ID. Refunds are handled by Apple per their policies.</li>
-        <li>Restore purchases from the App: <em>Premium → Restore Purchases</em>.</li>
+        <li>Restore purchases: in the App, open <em>Premium → Restore Purchases</em>.</li>
       </ul>
 
       <h2>4. Acceptable Use</h2>
       <ul>
-        <li>Do not misuse the App, attempt to access it by unauthorized means, or interfere with its operation.</li>
+        <li>Do not misuse the App, attempt unauthorized access, or interfere with its operation.</li>
         <li>You may not reverse engineer, copy, or resell the service or content except as allowed by law.</li>
         <li>Do not upload content that is unlawful, harmful, or infringes others’ rights.</li>
       </ul>
 
       <h2>5. Health & Safety</h2>
-      <p>ThryveFit is not a medical device. Content and analytics are for informational purposes only and are not a substitute for professional medical advice. Consult a physician before making changes to diet, exercise, or health routines.</p>
+      <p>The App is not a medical device. Content and analytics are for informational purposes only and are not a substitute for professional medical advice. Consult a physician before making changes to diet, exercise, or health routines.</p>
 
       <h2>6. Ownership</h2>
       <p>We retain all rights in the App and its content. You receive a personal, non‑transferable, revocable license to use the App in accordance with these Terms.</p>
@@ -75,7 +81,19 @@
       <p>Email: <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></p>
     </article>
 
-    <footer><div class="foot">© <span id="year"></span> ThryveFit</div></footer>
+    <footer>
+      <div class="footer-grid">
+        <div><h4>Company</h4>
+          <a href="./support.html">Support</a><br/>
+          <a class="active" href="./terms.html">Terms</a><br/>
+          <a href="./privacy.html">Privacy</a>
+        </div>
+        <div><h4>Contact</h4><a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></div>
+        <div><h4>Pricing</h4><p class="subtext">Monthly $9.99 • Annual $79.99. Cancel anytime in iOS Settings. Prices may vary by region.</p></div>
+        <div><h4>Legal</h4><p class="subtext">Subscriptions renew automatically unless cancelled at least 24 hours before period end.</p></div>
+      </div>
+      <div class="copy">© <span id="year"></span> ThryveFit. All rights reserved.</div>
+    </footer>
   </div>
   <script>
     document.getElementById('year').textContent=new Date().getFullYear();
