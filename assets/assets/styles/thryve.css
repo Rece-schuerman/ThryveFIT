@@ -1,0 +1,145 @@
+/* ============= ThryveFit – shared styles ============= */
+:root{
+  /* Colors */
+  --bg:#0F0F0F;
+  --surface:#121212;
+  --surface-1:#181818;
+  --surface-2:#232323;
+  --blue:#2563EB;
+  --white:#FFFFFF;
+  --text:#E6E7EA;
+  --muted:#AEB5BD;
+
+  /* Layout */
+  --radius:16px;
+  --gap:24px;
+  --ring:0 0 0 3px rgba(37,99,235,.45);
+
+  /* Type sizes */
+  --fs-body: clamp(16px, 1.8vw, 18px);
+  --fs-sub: clamp(13px, 1.4vw, 14px);
+  --fs-h1: clamp(28px, 4.2vw, 46px);
+  --fs-h2: clamp(20px, 3.2vw, 26px);
+  --fs-h3: clamp(18px, 2.4vw, 20px);
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  background:var(--bg);
+  color:var(--white);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height:1.6;
+  font-size: var(--fs-body);
+}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--blue);text-decoration:none;font-weight:600}
+a:hover{text-decoration:underline}
+a:focus-visible, button:focus-visible, .cta:focus-visible{outline:none;box-shadow:var(--ring);border-radius:12px}
+
+/* Skip link */
+.skip{position:absolute;left:-9999px;top:auto}
+.skip:focus{left:16px;top:16px;background:#0C0C0C;color:#fff;padding:8px 12px;border-radius:8px;z-index:999}
+
+/* Container */
+.container{max-width:1120px;margin:0 auto;padding:var(--gap)}
+
+/* Header / Nav */
+.site-header{position:relative}
+.nav{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  padding:16px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.brand{display:inline-flex;align-items:center;gap:12px}
+.brand img{height:48px;width:auto}
+.wordmark{display:flex;justify-content:center}
+.wordmark img{height:44px;width:auto}
+.nav-cta{display:flex;justify-content:end}
+.cta{
+  background:var(--blue);
+  color:#fff;
+  padding:12px 18px;
+  border-radius:var(--radius);
+  box-shadow:0 6px 16px rgba(37,99,235,.25);
+  display:inline-flex;align-items:center;gap:8px;
+}
+.cta[aria-disabled="true"]{opacity:.6;pointer-events:none}
+
+/* Hero / Content */
+.hero{text-align:center;padding:40px 0 24px}
+.hero h1{font-size:var(--fs-h1);margin:0 0 12px;letter-spacing:-.3px}
+.hero p{color:var(--text);max-width:760px;margin:0 auto}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:var(--gap);
+  margin:40px 0;
+}
+.card,.panel{
+  background:var(--surface-1);
+  border:1px solid var(--surface-2);
+  border-radius:var(--radius);
+  padding:28px;
+}
+.card h3{font-size:var(--fs-h3);margin:0 0 10px}
+.card p{color:var(--text);margin:0}
+.card:hover{transform:translateY(-3px);transition:transform .18s ease}
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--gap);
+  align-items:center;
+  margin:56px 0;
+}
+.panel h2{font-size:var(--fs-h2);margin:0 0 12px}
+.list{display:grid;gap:12px;margin-top:10px}
+.item{display:flex;gap:12px;align-items:flex-start}
+.check{color:#059669;font-weight:700;margin-top:2px}
+.eyebrow{color:#7EA6FF;text-transform:uppercase;letter-spacing:.08em;font-size:12px;margin:0 0 8px}
+
+/* Legal pages (ToC, anchors) */
+.toc{
+  background:var(--surface);
+  border:1px solid var(--surface-2);
+  border-radius:var(--radius);
+  padding:16px 20px;
+  margin:16px 0 12px;
+}
+.toc a{display:inline-block;margin:6px 12px 6px 0}
+.legal article h2{font-size:var(--fs-h2);margin:24px 0 8px}
+.backtop{
+  position:fixed;right:16px;bottom:16px;
+  display:none;padding:10px 14px;border-radius:999px;background:var(--surface-1);
+  border:1px solid var(--surface-2);color:var(--white);text-decoration:none
+}
+.show-backtop .backtop{display:inline-flex}
+
+/* Footer (shared) */
+footer{border-top:1px solid var(--surface-2);margin-top:56px}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:var(--gap);
+  padding:24px 0;
+}
+.footer-grid a{color:var(--text)}
+.footer-grid a.active{color:var(--white);text-decoration:underline}
+.subtext{color:var(--muted);font-size:var(--fs-sub)}
+.copy{color:var(--muted);font-size:12px;text-align:center;padding:12px 0 36px}
+
+/* Responsive */
+@media (max-width:800px){
+  .brand img{height:40px}
+  .wordmark img{height:36px}
+  .split{grid-template-columns:1fr}
+}
+@media (min-width:1200px){
+  .brand img{height:56px}
+  .wordmark img{height:48px}
+}
