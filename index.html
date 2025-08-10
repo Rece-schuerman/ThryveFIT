@@ -8,8 +8,6 @@
   <link rel="canonical" href="./index.html"/>
   <meta property="og:title" content="ThryveFit"/>
   <meta property="og:description" content="Train smarter. Eat smarter. See progress clearly."/>
-  <meta property="og:type" content="website"/>
-  <!-- Optional: <meta property="og:image" content="assets/og-image.png"/> -->
   <link rel="preload" href="assets/WORDMARK-WHITE.png" as="image"/>
   <link rel="stylesheet" href="assets/styles/thryve.css"/>
 </head>
@@ -20,19 +18,10 @@
     <div class="container">
       <nav class="nav" aria-label="Primary">
         <a class="brand" href="./index.html" aria-label="ThryveFit Home">
-          <picture>
-            <source srcset="assets/ICON-BLUE.svg" type="image/svg+xml">
-            <img src="assets/ICON-BLUE.png" width="56" height="56" alt="ThryveFit icon">
-          </picture>
+          <img src="assets/ICON-BLUE.png" width="44" height="44" alt="ThryveFit icon">
         </a>
-        <div class="wordmark">
-          <picture>
-            <source srcset="assets/WORDMARK-WHITE.svg" type="image/svg+xml">
-            <img src="assets/WORDMARK-WHITE.png" width="220" height="48" alt="ThryveFit">
-          </picture>
-        </div>
+        <div class="wordmark"><img src="assets/WORDMARK-WHITE.png" width="200" height="40" alt="ThryveFit"></div>
         <div class="nav-cta">
-          <!-- Replace href with real App Store link when ready -->
           <a class="badge" href="#download" aria-disabled="true"> App Store</a>
         </div>
       </nav>
@@ -48,47 +37,29 @@
     </div>
 
     <div class="container">
-      <!-- Feature Cards -->
+      <!-- Compact Feature Cards (no giant icons) -->
       <section class="cards" aria-label="Highlights">
-        <!-- Feature -->
         <article class="card">
-          <span class="eyebrow">Nutrition</span>
-          <div class="i-circle" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 3v7a2 2 0 0 0 4 0V3M8 3v7a2 2 0 0 0 4 0V3M12 3v7a2 2 0 0 0 4 0V3"/>
-              <path d="M15 3h2a2 2 0 0 1 2 2v7M6 21V10M18 21V7"/>
-            </svg>
-          </div>
           <h3>AI Meal Plans</h3>
-          <p class="kicker">Personalized macros and meals tuned to your targets, preferences, and constraints.</p>
-          <ul class="feature-list">
-            <li><span class="tick">✓</span><span>Adapts automatically each week</span></li>
-            <li><span class="tick">✓</span><span>Respects allergies & dislikes</span></li>
-            <li><span class="tick">✓</span><span>One‑tap grocery list</span></li>
+          <p>Personalized macros and meals tuned to your targets, preferences, and constraints.</p>
+          <ul class="features">
+            <li>Adapts weekly to progress</li>
+            <li>Respects allergies & dislikes</li>
+            <li>One‑tap grocery list</li>
           </ul>
-          <div class="mt-2"><span class="pill">Premium</span></div>
         </article>
 
-        <!-- Feature -->
         <article class="card">
-          <span class="eyebrow">Capture</span>
-          <div class="i-circle" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 19v3"/>
-            </svg>
-          </div>
           <h3>Voice Logging</h3>
-          <p class="kicker">Log meals hands‑free in seconds for more accurate tracking.</p>
-          <ul class="feature-list">
-            <li><span class="tick">✓</span><span>Under 5 seconds per entry</span></li>
-            <li><span class="tick">✓</span><span>Works offline; syncs later</span></li>
-            <li><span class="tick">✓</span><span>Natural language friendly</span></li>
+          <p>Log meals hands‑free in seconds for more accurate tracking.</p>
+          <ul class="features">
+            <li>Under 5 seconds per entry</li>
+            <li>Works offline; syncs later</li>
+            <li>Natural language friendly</li>
           </ul>
         </article>
 
-        <!-- Media -->
         <article class="card media-card">
-          <span class="eyebrow">Clarity</span>
           <h3>Advanced Analytics</h3>
           <div class="media" aria-label="Analytics preview">
             <img src="assets/sample-analytics-placeholder.png" alt="Charts and trends screenshot placeholder">
@@ -97,41 +68,45 @@
         </article>
       </section>
 
-      <!-- Stats -->
-      <section class="cards" aria-label="Social proof">
-        <article class="card stat"><div class="num">97%</div><div class="cap">Find meal logging faster</div></article>
-        <article class="card stat"><div class="num">12k+</div><div class="cap">Meals tracked last month</div></article>
-        <article class="card stat"><div class="num">4.8★</div><div class="cap">Early user rating</div></article>
-      </section>
-
       <!-- Split -->
       <section class="split" aria-label="Premium">
         <div class="panel">
-          <span class="eyebrow">Capabilities</span>
           <h2>Premium Features</h2>
           <div class="list">
-            <div class="item"><span class="check">✓</span><div>Custom workouts with saved routines</div></div>
-            <div class="item"><span class="check">✓</span><div>Macro rings, trend lines, weekly summaries</div></div>
-            <div class="item"><span class="check">✓</span><div>Secure storage with privacy‑first defaults</div></div>
+            <div class="item"><span>•</span><div>Custom workouts with saved routines</div></div>
+            <div class="item"><span>•</span><div>Macro rings, trend lines, weekly summaries</div></div>
+            <div class="item"><span>•</span><div>Secure storage with privacy‑first defaults</div></div>
           </div>
         </div>
         <div class="panel">
-          <span class="eyebrow">Design System</span>
           <h2>Designed for Focus</h2>
           <p class="subtext maxch">Dark‑mode first. Professional blue actions. Clean spacing. Every screen reduces friction and increases clarity.</p>
         </div>
       </section>
 
-      <!-- Testimonials -->
-      <section class="quotes" aria-label="Testimonials">
-        <article class="quote"><p>“ThryveFit finally made my macros make sense.”</p><small>— Alex, trainer</small></article>
-        <article class="quote"><p>“Logging that takes seconds means I actually do it.”</p><small>— Priya</small></article>
+      <!-- Testimonials (clean) -->
+      <section class="testimonials">
+        <h2>What users say</h2>
+        <div class="quote-grid">
+          <div class="quote">
+            <blockquote>“ThryveFit finally made my macros make sense.”</blockquote>
+            <div class="cite">Alex • Coach</div>
+          </div>
+          <div class="quote">
+            <blockquote>“Logging that takes seconds means I actually do it.”</blockquote>
+            <div class="cite">Priya • Busy professional</div>
+          </div>
+          <div class="quote">
+            <blockquote>“Clear trends and weekly summaries keep me accountable.”</blockquote>
+            <div class="cite">Jordan • Athlete</div>
+          </div>
+        </div>
       </section>
 
       <!-- CTA -->
-      <div id="download" class="center mt-6">
+      <div id="download" class="center" style="margin-top:34px">
         <a class="badge" href="#" aria-disabled="true"> App Store</a>
-        <p class="subtext mt-1">Requires iOS. Some features require ThryveFit Premium. Free trial available.</p>
+        <p class="subtext" style="margin-top:6px">Requires iOS. Some features require ThryveFit Premium. Free trial available.</p>
       </div>
     </div>
   </main>
@@ -152,8 +127,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
