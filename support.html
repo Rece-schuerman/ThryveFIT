@@ -3,96 +3,221 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ThryveFit Support</title>
-  <meta name="description" content="Get help with ThryveFit—billing, subscriptions, account, and troubleshooting." />
+  <title>ThryveFit</title>
+  <meta name="description" content="ThryveFit is a professional fitness platform that turns your training and nutrition into a high‑resolution performance dashboard." />
+  <!--
+    Customised landing page with improved spacing, typography and branding.
+    The brand logo is loaded from the assets folder and scales responsively.
+    Colours and spacing variables live on the :root for easy theme adjustments.
+  -->
   <style>
-    :root { --bg:#0F0F0F; --surface:#1A1A1A; --surface2:#2A2A2A; --blue:#2563EB; --white:#FFF; --text:#E5E7EB; --muted:#9CA3AF; --success:#059669; --error:#DC2626; }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:var(--blue);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:960px;margin:0 auto;padding:24px}
-    .header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
-    .hero{padding:36px 0 8px}
-    h1{font-size:36px;margin:0 0 8px;letter-spacing:-0.3px}
-    p.lead{color:var(--text);max-width:760px;line-height:26px}
-
-    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin:24px 0}
-    .card{background:var(--surface);border:1px solid var(--surface2);border-radius:16px;padding:20px}
-    .card h2{font-size:20px;margin:0 0 10px}
-    .card p, .card li{color:var(--text);line-height:22px}
-
-    .faq dt{font-weight:600;margin-top:12px}
-    .faq dd{margin:6px 0 0 0;color:var(--muted)}
-
-    footer{border-top:1px solid var(--surface2);margin-top:32px}
-    .foot{display:flex;flex-wrap:wrap;gap:16px;padding:20px 0;color:var(--muted);font-size:13px}
+    :root {
+      --bg: #0F0F0F;
+      --surface: #181818;
+      --surface-2: #2A2A2A;
+      --blue: #2563EB;
+      --white: #FFFFFF;
+      --text: #E5E7EB;
+      --muted: #9CA3AF;
+      --success: #059669;
+      --error: #DC2626;
+      --radius: 16px;
+      --gap: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--white);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: var(--gap);
+    }
+    /* Navigation */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--gap) 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { height: 40px; width: auto; display: block; }
+    .cta {
+      background: var(--blue);
+      color: var(--white);
+      padding: 12px 18px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(37,99,235,.25);
+      transition: background 0.2s ease;
+    }
+    .cta:hover { background: #1e4fc6; }
+    /* Hero */
+    .hero { padding: 80px 0 40px; text-align: center; }
+    .hero h1 { font-size: 48px; margin: 0 0 16px; letter-spacing: -0.3px; }
+    .hero p {
+      color: var(--text);
+      font-size: 20px;
+      margin: 0 auto;
+      max-width: 720px;
+    }
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: var(--gap);
+      margin: 48px 0;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--surface-2);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .card:hover {
+      background: var(--surface-2);
+      transform: translateY(-4px);
+    }
+    .card h3 { margin: 0 0 12px; font-size: 20px; }
+    .card p {
+      color: var(--text);
+      margin: 0;
+      line-height: 24px;
+      font-size: 15px;
+    }
+    /* Split section */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap);
+      align-items: center;
+      margin: 64px 0;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--surface-2);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+    .panel h2 { margin: 0 0 16px; font-size: 26px; }
+    .list { display: grid; gap: 12px; margin-top: 12px; }
+    .item { display: flex; gap: 12px; align-items: flex-start; }
+    .check { color: var(--success); font-weight: 700; margin-top: 2px; }
+    /* Call‑to‑action and footer */
+    .foot-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 64px 0 32px;
+    }
+    .subtext { color: var(--muted); font-size: 14px; }
+    footer {
+      border-top: 1px solid var(--surface-2);
+      margin-top: 64px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: var(--gap);
+      padding: 32px 0;
+    }
+    .footer-grid h4 { margin-top: 0; }
+    .copy {
+      color: var(--muted);
+      font-size: 12px;
+      padding: 16px 0 40px;
+      text-align: center;
+    }
+    @media (max-width: 800px) {
+      .split { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <header class="header">
+    <nav class="nav">
       <div class="brand">
-        <span>ThryveFit Support</span>
+        <!-- Replace the src with the appropriate logo file placed in the assets folder -->
+        <img src="assets/PRIMARY-HZ-W-B.png" alt="ThryveFit logo">
       </div>
-      <a href="./index.html">← Marketing Page</a>
-    </header>
+      <a class="cta" href="#download">Download</a>
+    </nav>
 
     <section class="hero">
-      <h1>How can we help?</h1>
-      <p class="lead">Use the resources below to resolve most issues quickly. If you still need help, contact us—our goal is fast, professional support.</p>
+      <h1>Unlock Your Potential</h1>
+      <p>Transform your training and nutrition into actionable insights. ThryveFit gives you the clarity you need to reach your goals faster.</p>
     </section>
 
-    <section class="grid">
-      <article class="card">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></p>
-        <p>Business hours: Mon–Fri, 9:00–17:00 PT</p>
-      </article>
-
-      <article class="card">
-        <h2>Billing & Subscriptions</h2>
-        <ul>
-          <li>Subscriptions are managed by Apple. To cancel or change plans: Settings → Apple ID → Subscriptions → ThryveFit.</li>
-          <li>Trials convert to paid unless cancelled at least 24 hours before the period ends.</li>
-          <li>Prices: Monthly $9.99 • Annual $79.99 (regional pricing may vary).</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Troubleshooting</h2>
-        <ul>
-          <li>Restore purchases: In the app, open Premium → Restore Purchases.</li>
-          <li>Data not syncing: Ensure network access and restart the app.</li>
-          <li>Voice logging: Grant microphone permission in iOS Settings → ThryveFit.</li>
-          <li>Camera scanning: Grant camera permission in iOS Settings → ThryveFit.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>FAQ</h2>
-        <dl class="faq">
-          <dt>What does Premium include?</dt>
-          <dd>AI meal plans, voice food logging, advanced analytics, custom workouts, and more.</dd>
-          <dt>Is my data private?</dt>
-          <dd>Yes. We use secure storage and follow least-privilege access to protect your information.</dd>
-          <dt>How do I contact support?</dt>
-          <dd>Email <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a>. We typically respond within 1 business day.</dd>
-        </dl>
-      </article>
-
-      <article class="card">
-        <h2>Legal</h2>
-        <p><a href="https://thryvefit.com/terms" target="_blank" rel="noopener">Terms of Service</a> • <a href="https://thryvefit.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></p>
-        <p class="muted">Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period.</p>
-      </article>
+    <section class="cards" aria-label="Highlights">
+      <div class="card">
+        <h3>AI Meal Plans</h3>
+        <p>Personalized daily macros and meals tuned to your targets, preferences, and constraints.</p>
+      </div>
+      <div class="card">
+        <h3>Voice Logging</h3>
+        <p>Log meals hands‑free in seconds. Faster capture means more accurate tracking.</p>
+      </div>
+      <div class="card">
+        <h3>Advanced Analytics</h3>
+        <p>Clear progress charts, recovery cues, and trend detection engineered for smarter decisions.</p>
+      </div>
     </section>
+
+    <section class="split" aria-label="Premium">
+      <div class="panel">
+        <h2>Premium Capabilities</h2>
+        <div class="list">
+          <div class="item"><span class="check">✓</span><div>Custom workouts with saved routines.</div></div>
+          <div class="item"><span class="check">✓</span><div>Macro rings, trend lines, and weekly summaries.</div></div>
+          <div class="item"><span class="check">✓</span><div>Secure storage with privacy‑first defaults.</div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Designed for Focus</h2>
+        <p class="subtext">Dark‑mode first. Professional blue actions. Clean spacing. Every screen is engineered to reduce friction and increase clarity.</p>
+      </div>
+    </section>
+
+    <div id="download" class="foot-cta">
+      <a class="cta" href="#">Get ThryveFit on the App Store</a>
+      <div class="subtext">Requires iOS. Some features require ThryveFit Premium. Free trial available.</div>
+    </div>
 
     <footer>
-      <div class="foot">© <span id="year"></span> ThryveFit • Professional fitness software</div>
+      <div class="footer-grid">
+        <div>
+          <h4>Company</h4>
+          <a href="./support.html">Support</a><br />
+          <a href="https://thryvefit.com/terms" target="_blank" rel="noopener">Terms</a><br />
+          <a href="https://thryvefit.com/privacy" target="_blank" rel="noopener">Privacy</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a>
+        </div>
+        <div>
+          <h4>Pricing</h4>
+          <p class="subtext">Monthly $9.99 • Annual $79.99. Cancel anytime in iOS Settings. Prices may vary by region.</p>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <p class="subtext">Subscriptions renew automatically unless cancelled at least 24 hours before the period ends.</p>
+        </div>
+      </div>
+      <div class="copy">© <span id="year"></span> ThryveFit. All rights reserved.</div>
     </footer>
   </div>
-  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
