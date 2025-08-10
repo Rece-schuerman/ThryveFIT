@@ -10,11 +10,16 @@
     *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text",Segoe UI,Roboto,Helvetica,Arial,sans-serif}
     a{color:var(--blue);text-decoration:none;font-weight:600}a:hover{text-decoration:underline}
     .container{max-width:1120px;margin:0 auto;padding:var(--gap)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:var(--gap) 0}
-    .brand{display:flex;align-items:center;gap:12px}.brand img{height:36px}
+    /* NAV — three columns: left icon, center wordmark, right action */
+    .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px 0}
+    .brand{display:inline-flex;align-items:center;gap:12px}
+    .brand img{height:48px;width:auto;display:block}
+    .wordmark{display:flex;justify-content:center}
+    .wordmark img{height:44px;width:auto;display:block}
+    .nav-cta{display:flex;justify-content:end}
     .cta{background:var(--blue);color:#fff;padding:12px 18px;border-radius:var(--radius);box-shadow:0 6px 16px rgba(37,99,235,.25)}
-    .header{display:flex;justify-content:center;padding:16px 0 8px}.header img{height:44px}
-    .hero{text-align:center;padding:64px 0 32px}
+    /* CONTENT */
+    .hero{text-align:center;padding:48px 0 32px}
     .hero h1{font-size:46px;margin:0 0 12px;letter-spacing:-.3px}
     .hero p{color:var(--text);max-width:760px;margin:0 auto;font-size:19px}
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap);margin:40px 0}
@@ -24,24 +29,33 @@
     .panel{background:var(--surface);border:1px solid var(--surface2);border-radius:var(--radius);padding:28px}
     .foot-cta{display:flex;flex-direction:column;align-items:center;gap:12px;padding:48px 0 24px}
     .subtext{color:var(--muted);font-size:14px}
+    /* FOOTER (shared on all pages) */
     footer{border-top:1px solid var(--surface2);margin-top:56px}
     .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--gap);padding:24px 0}
+    .footer-grid a{color:var(--text)}
+    .footer-grid a.active{color:var(--white);text-decoration:underline}
     .copy{color:var(--muted);font-size:12px;text-align:center;padding:12px 0 36px}
-    @media (max-width:800px){.split{grid-template-columns:1fr}}
+    /* Responsive tweaks */
+    @media (max-width:800px){
+      .brand img{height:40px}
+      .wordmark img{height:36px}
+      .split{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Primary">
       <a class="brand" href="./index.html" aria-label="ThryveFit Home">
         <img src="assets/ICON-BLUE.png" alt="ThryveFit icon"/>
       </a>
-      <a class="cta" href="#download">Download</a>
+      <div class="wordmark" aria-hidden="false">
+        <img src="assets/WORDMARK-WHITE.png" alt="ThryveFit"/>
+      </div>
+      <div class="nav-cta">
+        <a class="cta" href="#download">Download</a>
+      </div>
     </nav>
-
-    <div class="header" role="banner">
-      <img src="assets/WORDMARK-WHITE.png" alt="ThryveFit"/>
-    </div>
 
     <section class="hero">
       <h1>Unlock Your Potential</h1>
@@ -76,7 +90,11 @@
 
     <footer>
       <div class="footer-grid">
-        <div><h4>Company</h4><a href="./support.html">Support</a><br/><a href="./terms.html">Terms</a><br/><a href="./privacy.html">Privacy</a></div>
+        <div><h4>Company</h4>
+          <a class="active" href="./support.html">Support</a><br/>
+          <a href="./terms.html">Terms</a><br/>
+          <a href="./privacy.html">Privacy</a>
+        </div>
         <div><h4>Contact</h4><a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></div>
         <div><h4>Pricing</h4><p class="subtext">Monthly $9.99 • Annual $79.99. Cancel anytime in iOS Settings. Prices may vary by region.</p></div>
         <div><h4>Legal</h4><p class="subtext">Subscriptions renew automatically unless cancelled at least 24 hours before period end.</p></div>
