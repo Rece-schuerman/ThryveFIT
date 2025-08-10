@@ -60,7 +60,7 @@ a:focus-visible, button:focus-visible, .cta:focus-visible{outline:none; box-shad
 .skip{position:absolute; left:-9999px; top:auto}
 .skip:focus{left:16px; top:16px; background:#0E0F11; color:#fff; padding:8px 12px; border-radius:8px; z-index:1000}
 
-/* ---------- Header / Nav (clean logos + aligned Home button) ---------- */
+/* ---------- Header / Nav ---------- */
 .site-header{position:relative; z-index:3}
 .nav{
   display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
@@ -96,8 +96,9 @@ a:focus-visible, button:focus-visible, .cta:focus-visible{outline:none; box-shad
   transition:transform .14s ease, background-color .14s ease, border-color .14s ease, box-shadow .14s ease;
   white-space:nowrap;
 }
+/* Remove chevron icon globally (keeps text only) */
+.home-btn svg{display:none}
 .home-btn:hover{transform:translateY(-1px); background:#0e0f12; border-color:rgba(255,255,255,.2)}
-.home-btn svg{width:14px; height:14px}
 
 /* ---------- Hero ---------- */
 .hero{padding:30px 0 16px}
@@ -123,7 +124,7 @@ a:focus-visible, button:focus-visible, .cta:focus-visible{outline:none; box-shad
 .features{margin:10px 0 0; padding-left:18px}
 .features li{margin:4px 0}
 
-/* Media card */
+/* Media card (not used on index anymore, kept for flexibility) */
 .media-card{display:grid; gap:10px}
 .media{border-radius:10px; overflow:hidden; border:1px solid var(--surface-2); background:#0b0c0f}
 
@@ -154,19 +155,19 @@ footer{border-top:1px solid var(--surface-2); margin-top:40px}
 @media (max-width: 640px){
   /* Header layout: keep a stable single row */
   .nav{
-    grid-template-columns: auto 1fr auto;   /* icon | wordmark | button */
+    grid-template-columns: auto 1fr auto;   /* icon | (center spacer/wordmark) | button */
     align-items:center;
     padding:8px 0;
     column-gap:8px;
   }
   .brand img{height:34px}
   .wordmark img{height:30px}
-  .nav-cta{justify-content:end}
+
+  /* Remove wordmark on mobile to avoid squish */
+  .wordmark{display:none}
 
   /* Prevent wrapping/overflow jitter in tight widths */
-  .brand, .wordmark, .nav-cta{min-width:0}
-  .wordmark{overflow:hidden}
-  .wordmark img{max-width:100%; height:auto}
+  .brand, .nav-cta{min-width:0}
 
   /* Buttons: consistent tappable size and no desktop nudge */
   .home-btn, .badge{
@@ -182,7 +183,10 @@ footer{border-top:1px solid var(--surface-2); margin-top:40px}
   /* Split section collapses nicely */
   .split{grid-template-columns:1fr; gap:16px; margin:26px 0}
 
-  /* CTA block full-width option (looks better on tiny phones) */
+  /* CTA block full-width and centered on index */
+  #download{
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px;
+  }
   #download .badge{
     width:100%; justify-content:center;
   }
@@ -191,7 +195,6 @@ footer{border-top:1px solid var(--surface-2); margin-top:40px}
 /* Very small phones (iPhone SE/old Android) */
 @media (max-width: 360px){
   .brand img{height:30px}
-  .wordmark img{height:26px}
   .home-btn, .badge{padding:10px 12px; font-size:14px}
 }
 
