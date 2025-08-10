@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Privacy Policy • ThryveFit</title>
+  <meta name="description" content="Privacy Policy for ThryveFit." />
+  <style>
+    :root{--bg:#0F0F0F;--surface:#181818;--surface2:#2A2A2A;--blue:#2563EB;--white:#fff;--text:#E5E7EB;--muted:#9CA3AF;--radius:16px;--gap:24px}
+    *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text",Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--blue);text-decoration:none;font-weight:600}a:hover{text-decoration:underline}
+    .container{max-width:960px;margin:0 auto;padding:var(--gap)}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:var(--gap) 0}
+    .brand{display:flex;align-items:center;gap:12px}.brand img{height:36px}
+    .header{display:flex;justify-content:center;padding:16px 0 8px}.header img{height:40px}
+    h1{font-size:38px;margin:24px 0 8px}h2{margin:24px 0 8px}p,li{color:var(--text);line-height:28px}
+    .card{background:var(--surface);border:1px solid var(--surface2);border-radius:var(--radius);padding:24px}
+    footer{border-top:1px solid var(--surface2);margin-top:32px}
+    .foot{color:var(--muted);font-size:13px;padding:20px 0}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="./index.html" aria-label="ThryveFit Home"><img src="assets/ICON-BLUE.png" alt="ThryveFit icon"/></a>
+      <a href="./index.html">← Back to Home</a>
+    </nav>
+
+    <div class="header"><img src="assets/WORDMARK-WHITE.png" alt="ThryveFit"/></div>
+
+    <article class="card" role="article">
+      <h1>Privacy Policy</h1>
+      <p><strong>Last updated:</strong> <span id="updated"></span></p>
+
+      <h2>1. Information We Collect</h2>
+      <ul>
+        <li><strong>Account & Contact:</strong> email, name (if provided).</li>
+        <li><strong>App Data You Enter:</strong> meals, macros, workouts, notes, and related metadata.</li>
+        <li><strong>Device & Usage:</strong> device model, OS version, app version, crash/diagnostic data, and basic analytics (e.g., screens viewed, feature usage).</li>
+      </ul>
+
+      <h2>2. How We Use Information</h2>
+      <ul>
+        <li>To operate core features (logging, plans, analytics).</li>
+        <li>To personalize content (e.g., macro targets, recommendations).</li>
+        <li>To maintain safety, prevent abuse, and troubleshoot issues.</li>
+        <li>To analyze aggregate usage and improve the App.</li>
+      </ul>
+
+      <h2>3. Sharing</h2>
+      <p>We do not sell your personal data. We share only with service providers who help us operate the App (e.g., analytics, crash reporting) under confidentiality obligations, or when required by law.</p>
+
+      <h2>4. Data Retention & Deletion</h2>
+      <p>We keep data only as long as needed for the purposes above. You may request deletion of your account and associated personal data by contacting us at <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a>. Deletion requests are processed within a reasonable period unless we must retain data to comply with legal obligations.</p>
+
+      <h2>5. Your Rights</h2>
+      <ul>
+        <li>Access, correct, or delete your data (subject to verification).</li>
+        <li>Opt‑out of non‑essential analytics where offered in‑app or by contacting us.</li>
+      </ul>
+
+      <h2>6. Children’s Privacy</h2>
+      <p>The App is not directed to children under 13 (or the minimum age in your jurisdiction). We do not knowingly collect data from children under 13.</p>
+
+      <h2>7. Security</h2>
+      <p>We use reasonable technical and organizational measures to protect your information. No method of transmission or storage is 100% secure.</p>
+
+      <h2>8. International Users</h2>
+      <p>Your data may be processed in the United States or other locations where we or our providers operate and may be subject to local laws.</p>
+
+      <h2>9. Changes to this Policy</h2>
+      <p>We may update this Privacy Policy. We will post the new date above. Continued use after changes means you accept the updated Policy.</p>
+
+      <h2>10. Contact</h2>
+      <p>Email: <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></p>
+    </article>
+
+    <footer><div class="foot">© <span id="year"></span> ThryveFit</div></footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('updated').textContent=new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
