@@ -3,84 +3,94 @@
 <head>
   <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Privacy Policy • ThryveFit</title>
-  <meta name="description" content="Privacy Policy for ThryveFit." />
-  <style>
-    :root{--bg:#0F0F0F;--surface:#181818;--surface2:#2A2A2A;--blue:#2563EB;--white:#fff;--text:#E5E7EB;--muted:#9CA3AF;--radius:16px;--gap:24px}
-    *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text",Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:var(--blue);text-decoration:none;font-weight:600}a:hover{text-decoration:underline}
-    .container{max-width:960px;margin:0 auto;padding:var(--gap)}
-    .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:16px 0}
-    .brand{display:inline-flex;align-items:center;gap:12px}.brand img{height:48px;width:auto}
-    .wordmark{display:flex;justify-content:center}.wordmark img{height:44px;width:auto}
-    .nav-cta{display:flex;justify-content:end}
-    .cta{background:var(--blue);color:#fff;padding:10px 16px;border-radius:var(--radius)}
-    h1{font-size:38px;margin:24px 0 8px}
-    h2{margin:24px 0 8px}
-    p,li{color:var(--text);line-height:28px}
-    .card{background:var(--surface);border:1px solid var(--surface2);border-radius:var(--radius);padding:24px;margin-top:12px}
-    footer{border-top:1px solid var(--surface2);margin-top:32px}
-    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--gap);padding:24px 0}
-    .footer-grid a{color:var(--text)}.footer-grid a.active{color:var(--white);text-decoration:underline}
-    .copy{color:var(--muted);font-size:12px;text-align:center;padding:12px 0 36px}
-    @media (max-width:800px){.brand img{height:40px}.wordmark img{height:36px}}
-  </style>
+  <meta name="description" content="Privacy Policy for ThryveFit."/>
+  <link rel="preload" href="assets/WORDMARK-WHITE.png" as="image" />
+  <link rel="stylesheet" href="assets/styles/thryve.css"/>
 </head>
 <body>
-  <div class="container">
-    <nav class="nav" role="navigation" aria-label="Primary">
-      <a class="brand" href="./index.html" aria-label="ThryveFit Home"><img src="assets/ICON-BLUE.png" alt="ThryveFit icon"/></a>
-      <div class="wordmark"><img src="assets/WORDMARK-WHITE.png" alt="ThryveFit"/></div>
-      <div class="nav-cta"><a class="cta" href="./index.html">← Back to Home</a></div>
-    </nav>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="./index.html" aria-label="ThryveFit Home">
+          <img src="assets/ICON-BLUE.png" width="48" height="48" alt="ThryveFit icon">
+        </a>
+        <div class="wordmark"><img src="assets/WORDMARK-WHITE.png" width="200" height="44" alt="ThryveFit"></div>
+        <div class="nav-cta"><a class="cta" href="./index.html">Home</a></div>
+      </nav>
+    </div>
+  </header>
 
-    <article class="card" role="article">
-      <h1>Privacy Policy</h1>
-      <p><strong>Last updated:</strong> <span id="updated"></span></p>
+  <main id="main" class="legal">
+    <div class="container">
+      <section class="hero">
+        <h1>Privacy Policy</h1>
+        <p class="subtext">Last updated: <span id="updated"></span></p>
+      </section>
 
-      <h2>1. Information We Collect</h2>
-      <ul>
-        <li><strong>Account & Contact:</strong> email, name (if provided).</li>
-        <li><strong>App Data You Enter:</strong> meals, macros, workouts, notes, and related metadata.</li>
-        <li><strong>Device & Usage:</strong> device model, OS version, app version, crash/diagnostic data, and basic analytics (e.g., screens viewed, feature usage).</li>
-      </ul>
+      <nav class="toc" aria-label="Table of contents">
+        <a href="#collect">Information We Collect</a>
+        <a href="#use">How We Use Information</a>
+        <a href="#share">Sharing</a>
+        <a href="#retention">Data Retention & Deletion</a>
+        <a href="#rights">Your Rights</a>
+        <a href="#children">Children’s Privacy</a>
+        <a href="#security">Security</a>
+        <a href="#intl">International Users</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-      <h2>2. How We Use Information</h2>
-      <ul>
-        <li>To operate core features (logging, plans, analytics).</li>
-        <li>To personalize content (e.g., macro targets, recommendations).</li>
-        <li>To maintain safety, prevent abuse, and troubleshoot issues.</li>
-        <li>To analyze aggregate usage and improve the App.</li>
-      </ul>
+      <article class="card" role="article">
+        <h2 id="collect">1. Information We Collect</h2>
+        <ul>
+          <li><strong>Account & Contact:</strong> email, name (if provided).</li>
+          <li><strong>App Data You Enter:</strong> meals, macros, workouts, notes, and related metadata.</li>
+          <li><strong>Device & Usage:</strong> device model, OS version, app version, crash/diagnostic data, and basic analytics (e.g., screens viewed, feature usage).</li>
+        </ul>
 
-      <h2>3. Sharing</h2>
-      <p>We do not sell your personal data. We share only with service providers who help us operate the App (e.g., analytics, crash reporting) under confidentiality obligations, or when required by law.</p>
+        <h2 id="use">2. How We Use Information</h2>
+        <ul>
+          <li>Operate core features (logging, plans, analytics).</li>
+          <li>Personalize content (e.g., macro targets, recommendations).</li>
+          <li>Maintain safety, prevent abuse, troubleshoot issues.</li>
+          <li>Analyze aggregate usage and improve the App.</li>
+        </ul>
 
-      <h2>4. Data Retention & Deletion</h2>
-      <p>We keep data only as long as needed for the purposes above. You may request deletion of your account and associated personal data by contacting us at <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a>. Deletion requests are processed within a reasonable period unless we must retain data to comply with legal obligations.</p>
+        <h2 id="share">3. Sharing</h2>
+        <p>We do not sell your personal data. We share only with service providers who help us operate the App (e.g., analytics, crash reporting) under confidentiality obligations, or when required by law.</p>
 
-      <h2>5. Your Rights</h2>
-      <ul>
-        <li>Access, correct, or delete your data (subject to verification).</li>
-        <li>Opt‑out of non‑essential analytics where offered in‑app or by contacting us.</li>
-      </ul>
+        <h2 id="retention">4. Data Retention & Deletion</h2>
+        <p>We keep data only as long as needed for the purposes above. You may request deletion of your account and associated personal data by contacting us at <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a>. Deletion requests are processed within a reasonable period unless we must retain data to comply with legal obligations.</p>
 
-      <h2>6. Children’s Privacy</h2>
-      <p>The App is not directed to children under 13 (or the minimum age in your jurisdiction). We do not knowingly collect data from children under 13.</p>
+        <h2 id="rights">5. Your Rights</h2>
+        <ul>
+          <li>Access, correct, or delete your data (subject to verification).</li>
+          <li>Opt‑out of non‑essential analytics where offered in‑app or by contacting us.</li>
+        </ul>
 
-      <h2>7. Security</h2>
-      <p>We use reasonable technical and organizational measures to protect your information. No method of transmission or storage is 100% secure.</p>
+        <h2 id="children">6. Children’s Privacy</h2>
+        <p>The App is not directed to children under 13 (or the minimum age in your jurisdiction). We do not knowingly collect data from children under 13.</p>
 
-      <h2>8. International Users</h2>
-      <p>Your data may be processed in the United States or other locations where we or our providers operate and may be subject to local laws.</p>
+        <h2 id="security">7. Security</h2>
+        <p>We use reasonable technical and organizational measures to protect your information. No method of transmission or storage is 100% secure.</p>
 
-      <h2>9. Changes to this Policy</h2>
-      <p>We may update this Privacy Policy. We will post the new date above. Continued use after changes means you accept the updated Policy.</p>
+        <h2 id="intl">8. International Users</h2>
+        <p>Your data may be processed in the United States or other locations where we or our providers operate and may be subject to local laws.</p>
 
-      <h2>10. Contact</h2>
-      <p>Email: <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></p>
-    </article>
+        <h2 id="changes">9. Changes to this Policy</h2>
+        <p>We may update this Privacy Policy. We will post the new date above. Continued use after changes means you accept the updated Policy.</p>
 
-    <footer>
+        <h2 id="contact">10. Contact</h2>
+        <p>Email: <a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></p>
+      </article>
+    </div>
+  </main>
+
+  <a class="backtop" href="#top" aria-label="Back to top">↑</a>
+
+  <footer>
+    <div class="container">
       <div class="footer-grid">
         <div><h4>Company</h4>
           <a href="./support.html">Support</a><br/>
@@ -92,11 +102,20 @@
         <div><h4>Legal</h4><p class="subtext">Subscriptions renew automatically unless cancelled at least 24 hours before period end.</p></div>
       </div>
       <div class="copy">© <span id="year"></span> ThryveFit. All rights reserved.</div>
-    </footer>
-  </div>
+    </div>
+  </footer>
+
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    document.getElementById('updated').textContent=new Date().toLocaleDateString();
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+    const u = document.getElementById('updated');
+    if (u) u.textContent = new Date().toLocaleDateString();
+    const b = document.querySelector('.backtop');
+    const onScroll = () => {
+      if (window.scrollY > window.innerHeight * 0.6) document.body.classList.add('show-backtop');
+      else document.body.classList.remove('show-backtop');
+    };
+    window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
   </script>
 </body>
 </html>
