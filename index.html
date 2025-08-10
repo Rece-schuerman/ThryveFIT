@@ -5,61 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>ThryveFit</title>
   <meta name="description" content="ThryveFit turns training and nutrition into a high‑resolution performance dashboard."/>
-  <link rel="preload" href="assets/WORDMARK-WHITE.png" as="image" imagesizes="200px" />
-  <!-- Optional: add favicons and OG image -->
-  <!-- <link rel="icon" href="assets/favicon.png"> -->
-  <!-- <meta property="og:image" content="assets/og-image.png"> -->
+  <link rel="canonical" href="./index.html"/>
+  <meta property="og:title" content="ThryveFit"/>
+  <meta property="og:description" content="Train smarter. Eat smarter. See progress clearly."/>
+  <meta property="og:type" content="website"/>
+  <!-- Optional: <meta property="og:image" content="assets/og-image.png"/> -->
+  <link rel="preload" href="assets/WORDMARK-WHITE.png" as="image"/>
   <link rel="stylesheet" href="assets/styles/thryve.css"/>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="container">
       <nav class="nav" aria-label="Primary">
         <a class="brand" href="./index.html" aria-label="ThryveFit Home">
-          <img src="assets/ICON-BLUE.png" width="48" height="48" alt="ThryveFit icon">
+          <picture>
+            <source srcset="assets/ICON-BLUE.svg" type="image/svg+xml">
+            <img src="assets/ICON-BLUE.png" width="56" height="56" alt="ThryveFit icon">
+          </picture>
         </a>
-        <div class="wordmark"><img src="assets/WORDMARK-WHITE.png" width="200" height="44" alt="ThryveFit"></div>
+        <div class="wordmark">
+          <picture>
+            <source srcset="assets/WORDMARK-WHITE.svg" type="image/svg+xml">
+            <img src="assets/WORDMARK-WHITE.png" width="220" height="48" alt="ThryveFit">
+          </picture>
+        </div>
         <div class="nav-cta">
-          <a class="cta" href="#download" aria-disabled="true">Download on the App Store</a>
+          <!-- Replace href with real App Store link when ready -->
+          <a class="badge" href="#download" aria-disabled="true"> App Store</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <div class="container">
+    <div class="container center narrow">
       <section class="hero">
         <h1>Unlock Your Potential</h1>
-        <p>Transform your training and nutrition into actionable insights. ThryveFit gives you clarity to reach your goals faster.</p>
+        <p class="maxch">Transform your training and nutrition into actionable insights. ThryveFit gives you clarity to reach your goals faster.</p>
       </section>
+    </div>
 
+    <div class="container">
+      <!-- Feature Cards -->
       <section class="cards" aria-label="Highlights">
-        <article class="card"><h3>AI Meal Plans</h3><p>Personalized macros and meals tuned to your targets, preferences, and constraints.</p></article>
-        <article class="card"><h3>Voice Logging</h3><p>Log meals hands‑free in seconds for more accurate tracking.</p></article>
-        <article class="card"><h3>Advanced Analytics</h3><p>Progress charts, recovery cues, and trend detection engineered for smarter decisions.</p></article>
+        <!-- Feature -->
+        <article class="card">
+          <span class="eyebrow">Nutrition</span>
+          <div class="i-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 3v7a2 2 0 0 0 4 0V3M8 3v7a2 2 0 0 0 4 0V3M12 3v7a2 2 0 0 0 4 0V3"/>
+              <path d="M15 3h2a2 2 0 0 1 2 2v7M6 21V10M18 21V7"/>
+            </svg>
+          </div>
+          <h3>AI Meal Plans</h3>
+          <p class="kicker">Personalized macros and meals tuned to your targets, preferences, and constraints.</p>
+          <ul class="feature-list">
+            <li><span class="tick">✓</span><span>Adapts automatically each week</span></li>
+            <li><span class="tick">✓</span><span>Respects allergies & dislikes</span></li>
+            <li><span class="tick">✓</span><span>One‑tap grocery list</span></li>
+          </ul>
+          <div class="mt-2"><span class="pill">Premium</span></div>
+        </article>
+
+        <!-- Feature -->
+        <article class="card">
+          <span class="eyebrow">Capture</span>
+          <div class="i-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 19v3"/>
+            </svg>
+          </div>
+          <h3>Voice Logging</h3>
+          <p class="kicker">Log meals hands‑free in seconds for more accurate tracking.</p>
+          <ul class="feature-list">
+            <li><span class="tick">✓</span><span>Under 5 seconds per entry</span></li>
+            <li><span class="tick">✓</span><span>Works offline; syncs later</span></li>
+            <li><span class="tick">✓</span><span>Natural language friendly</span></li>
+          </ul>
+        </article>
+
+        <!-- Media -->
+        <article class="card media-card">
+          <span class="eyebrow">Clarity</span>
+          <h3>Advanced Analytics</h3>
+          <div class="media" aria-label="Analytics preview">
+            <img src="assets/sample-analytics-placeholder.png" alt="Charts and trends screenshot placeholder">
+          </div>
+          <p class="subtext">Progress charts, recovery cues, and trend detection engineered for smarter decisions.</p>
+        </article>
       </section>
 
+      <!-- Stats -->
+      <section class="cards" aria-label="Social proof">
+        <article class="card stat"><div class="num">97%</div><div class="cap">Find meal logging faster</div></article>
+        <article class="card stat"><div class="num">12k+</div><div class="cap">Meals tracked last month</div></article>
+        <article class="card stat"><div class="num">4.8★</div><div class="cap">Early user rating</div></article>
+      </section>
+
+      <!-- Split -->
       <section class="split" aria-label="Premium">
         <div class="panel">
-          <p class="eyebrow">Capabilities</p>
+          <span class="eyebrow">Capabilities</span>
           <h2>Premium Features</h2>
           <div class="list">
-            <div class="item"><span class="check">✓</span><div>Custom workouts with saved routines.</div></div>
-            <div class="item"><span class="check">✓</span><div>Macro rings, trend lines, weekly summaries.</div></div>
-            <div class="item"><span class="check">✓</span><div>Secure storage with privacy‑first defaults.</div></div>
+            <div class="item"><span class="check">✓</span><div>Custom workouts with saved routines</div></div>
+            <div class="item"><span class="check">✓</span><div>Macro rings, trend lines, weekly summaries</div></div>
+            <div class="item"><span class="check">✓</span><div>Secure storage with privacy‑first defaults</div></div>
           </div>
         </div>
         <div class="panel">
-          <p class="eyebrow">Design System</p>
+          <span class="eyebrow">Design System</span>
           <h2>Designed for Focus</h2>
-          <p class="subtext">Dark‑mode first. Professional blue actions. Clean spacing. Every screen reduces friction and increases clarity.</p>
+          <p class="subtext maxch">Dark‑mode first. Professional blue actions. Clean spacing. Every screen reduces friction and increases clarity.</p>
         </div>
       </section>
 
-      <div id="download" class="foot-cta" style="display:flex;flex-direction:column;align-items:center;gap:12px;padding:48px 0 24px">
-        <a class="cta" href="#" aria-disabled="true">Get ThryveFit on the App Store</a>
-        <div class="subtext">Requires iOS. Some features require ThryveFit Premium. Free trial available.</div>
+      <!-- Testimonials -->
+      <section class="quotes" aria-label="Testimonials">
+        <article class="quote"><p>“ThryveFit finally made my macros make sense.”</p><small>— Alex, trainer</small></article>
+        <article class="quote"><p>“Logging that takes seconds means I actually do it.”</p><small>— Priya</small></article>
+      </section>
+
+      <!-- CTA -->
+      <div id="download" class="center mt-6">
+        <a class="badge" href="#" aria-disabled="true"> App Store</a>
+        <p class="subtext mt-1">Requires iOS. Some features require ThryveFit Premium. Free trial available.</p>
       </div>
     </div>
   </main>
@@ -79,8 +151,9 @@
       <div class="copy">© <span id="year"></span> ThryveFit. All rights reserved.</div>
     </div>
   </footer>
+
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
