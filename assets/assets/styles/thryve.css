@@ -65,14 +65,13 @@ a:focus-visible, button:focus-visible, .cta:focus-visible{outline:none; box-shad
 .nav{
   display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
   padding:10px 0; border-bottom:1px solid rgba(255,255,255,.06);
+  column-gap:12px;
 }
-.brand{display:inline-flex; align-items:center; gap:10px}
+.brand{display:inline-flex; align-items:center; gap:10px; min-width:0}
 .brand img{height:44px; width:auto}
-.wordmark{display:flex; justify-content:center}
+.wordmark{display:flex; justify-content:center; min-width:0}
 .wordmark img{height:40px; width:auto}
-.nav-cta{
-  display:flex; justify-content:end; align-items:center;
-}
+.nav-cta{display:flex; justify-content:end; align-items:center; min-width:0}
 
 /* App Store badge (Index) */
 .badge{
@@ -81,6 +80,7 @@ a:focus-visible, button:focus-visible, .cta:focus-visible{outline:none; box-shad
   background:linear-gradient(180deg, #15161A, #121317);
   color:#fff; font-weight:700; text-decoration:none;
   transition:transform .14s ease, border-color .14s ease, background-color .14s ease;
+  line-height:1.1; white-space:nowrap;
 }
 .badge:hover{transform:translateY(-1px)}
 .badge[aria-disabled="true"]{opacity:.6; pointer-events:none}
@@ -88,12 +88,13 @@ a:focus-visible, button:focus-visible, .cta:focus-visible{outline:none; box-shad
 /* Home button (Support / Terms / Privacy) */
 .home-btn{
   display:inline-flex; align-items:center; gap:8px;
-  padding:9px 14px; border-radius:12px;
+  padding:10px 14px; border-radius:12px;
   background:#0f1013; color:#fff; text-decoration:none;
   border:1px solid rgba(255,255,255,.14);
   box-shadow:0 8px 18px rgba(0,0,0,.25);
-  line-height:1; position:relative; top:-2px;   /* subtle nudge up for perfect visual alignment */
+  line-height:1.1; position:relative; top:-2px; /* desktop-only nudge */
   transition:transform .14s ease, background-color .14s ease, border-color .14s ease, box-shadow .14s ease;
+  white-space:nowrap;
 }
 .home-btn:hover{transform:translateY(-1px); background:#0e0f12; border-color:rgba(255,255,255,.2)}
 .home-btn svg{width:14px; height:14px}
@@ -144,10 +145,54 @@ footer{border-top:1px solid var(--surface-2); margin-top:40px}
 .copy{color:var(--muted); font-size:12px; text-align:center; padding:10px 0 30px}
 
 /* ---------- Responsive ---------- */
-@media (max-width:820px){
-  .brand img{height:40px}
-  .wordmark img{height:36px}
-  .split{grid-template-columns:1fr}
+/* Tablet-down polish */
+@media (max-width: 900px){
+  .container{padding:18px}
+}
+
+/* Phone-specific fixes */
+@media (max-width: 640px){
+  /* Header layout: keep a stable single row */
+  .nav{
+    grid-template-columns: auto 1fr auto;   /* icon | wordmark | button */
+    align-items:center;
+    padding:8px 0;
+    column-gap:8px;
+  }
+  .brand img{height:34px}
+  .wordmark img{height:30px}
+  .nav-cta{justify-content:end}
+
+  /* Prevent wrapping/overflow jitter in tight widths */
+  .brand, .wordmark, .nav-cta{min-width:0}
+  .wordmark{overflow:hidden}
+  .wordmark img{max-width:100%; height:auto}
+
+  /* Buttons: consistent tappable size and no desktop nudge */
+  .home-btn, .badge{
+    padding:11px 14px;       /* ≥44px overall height with line-height */
+    line-height:1.2;
+  }
+  .home-btn{top:0}           /* remove -2px nudge on mobile */
+
+  /* Cards become single column with tighter rhythm */
+  .cards{grid-template-columns:1fr; gap:16px; margin:22px 0}
+  .card, .panel{padding:18px}
+
+  /* Split section collapses nicely */
+  .split{grid-template-columns:1fr; gap:16px; margin:26px 0}
+
+  /* CTA block full-width option (looks better on tiny phones) */
+  #download .badge{
+    width:100%; justify-content:center;
+  }
+}
+
+/* Very small phones (iPhone SE/old Android) */
+@media (max-width: 360px){
+  .brand img{height:30px}
+  .wordmark img{height:26px}
+  .home-btn, .badge{padding:10px 12px; font-size:14px}
 }
 
 /* ---------- Reduced Motion ---------- */
