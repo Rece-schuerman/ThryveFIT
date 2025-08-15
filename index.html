@@ -15,14 +15,35 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- ===== Header ===== -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
+      <!-- Brand -->
       <a class="brand" href="./index.html" aria-label="ThryveFit Home">
         <img class="brand-icon" src="assets/ICON-BLUE.png" width="36" height="36" alt="ThryveFit icon"/>
         <img class="brand-wordmark" src="assets/WORDMARK-WHITE.png" width="150" height="28" alt="ThryveFit"/>
       </a>
+
+      <!-- Desktop nav -->
       <nav class="nav" aria-label="Primary">
+        <a href="./support.html">Support</a>
+        <a href="./terms.html">Terms of Service</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="menuToggle"
+              aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileNav" class="mobile-nav" hidden>
+      <nav class="mobile-nav-inner" aria-label="Mobile">
+        <a href="./index.html">Home</a>
         <a href="./support.html">Support</a>
         <a href="./terms.html">Terms of Service</a>
         <a href="./privacy.html">Privacy</a>
@@ -31,7 +52,7 @@
   </header>
 
   <main id="main">
-    <!-- ===== Hero ===== -->
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -53,11 +74,10 @@
       </div>
     </section>
 
-    <!-- ===== Key Features ===== -->
+    <!-- Features -->
     <section class="features">
       <div class="container">
         <h2 class="section-title">Key Features</h2>
-
         <div class="feature-grid">
           <article class="feature-card">
             <div class="thumb"><div class="thumb-ph">Screenshot Placeholder</div></div>
@@ -95,7 +115,7 @@
       </div>
     </section>
 
-    <!-- ===== Premium ===== -->
+    <!-- Premium -->
     <section class="premium">
       <div class="container premium-grid">
         <div>
@@ -145,16 +165,14 @@
       </div>
     </section>
 
-    <!-- ===== App Store CTA ===== -->
+    <!-- App Store CTA -->
     <section id="download" class="store-cta">
       <a class="badge" href="#" aria-disabled="true"> App Store</a>
-      <p class="subtext">
-        Requires iOS. Some features require ThryveFit Premium. Free trial available.
-      </p>
+      <p class="subtext">Requires iOS. Some features require ThryveFit Premium. Free trial available.</p>
     </section>
   </main>
 
-  <!-- ===== Footer (no duplicate nav row) ===== -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-top">
       <a class="brand brand-footer" href="./index.html" aria-label="ThryveFit Home">
@@ -192,25 +210,56 @@
   </footer>
 
   <script>
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Learn More toggle (accessible)
-    const btn = document.getElementById('learnMoreBtn');
-    const panel = document.getElementById('learnMorePanel');
+    // Learn More toggle
+    (function(){
+      const btn = document.getElementById('learnMoreBtn');
+      const panel = document.getElementById('learnMorePanel');
+      if(!btn || !panel) return;
+      btn.addEventListener('click', () => {
+        const open = !panel.hasAttribute('hidden');
+        if (open) {
+          panel.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.textContent = 'Learn More';
+        } else {
+          panel.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.textContent = 'Hide Details';
+          panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    })();
 
-    btn.addEventListener('click', () => {
-      const open = !panel.hasAttribute('hidden');
-      if (open) {
-        panel.setAttribute('hidden', '');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.textContent = 'Learn More';
-      } else {
-        panel.removeAttribute('hidden');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.textContent = 'Hide Details';
-        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // Mobile menu toggle
+    (function(){
+      const btn = document.getElementById('menuToggle');
+      const panel = document.getElementById('mobileNav');
+      if(!btn || !panel) return;
+
+      function closeMenu(){
+        panel.setAttribute('hidden','');
+        panel.dataset.open = 'false';
+        btn.setAttribute('aria-expanded','false');
+        btn.setAttribute('aria-label','Open navigation');
+        document.body.classList.remove('no-scroll');
       }
-    });
+      function openMenu(){
+        panel.removeAttribute('hidden');
+        panel.dataset.open = 'true';
+        btn.setAttribute('aria-expanded','true');
+        btn.setAttribute('aria-label','Close navigation');
+        document.body.classList.add('no-scroll');
+      }
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        isOpen ? closeMenu() : openMenu();
+      });
+      document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+      panel.addEventListener('click', (e) => { if(e.target.tagName === 'A') closeMenu(); });
+    })();
   </script>
 </body>
 </html>
