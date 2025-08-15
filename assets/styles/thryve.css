@@ -215,9 +215,7 @@ a:hover{opacity:.92}
 /* ===================================================================== */
 
 .hero--legal{ padding-bottom: 28px; }
-.hero-legal-inner{
-  display:flex; align-items:end; justify-content:space-between; gap:16px;
-}
+.hero-legal-inner{ display:flex; align-items:end; justify-content:space-between; gap:16px; }
 .hero-legal-copy h1{ margin:0 0 8px; font-size:2.5rem; color:#fff; }
 .hero-legal-copy .hero-sub{ color:var(--muted); max-width:60ch; margin:0 0 8px; }
 .effdate{
@@ -226,9 +224,7 @@ a:hover{opacity:.92}
 }
 
 .legal-wrap{ padding: 20px 0 40px; }
-.legal-grid{
-  display:grid; grid-template-columns: 0.9fr 2.1fr; gap:28px;
-}
+.legal-grid{ display:grid; grid-template-columns: 0.9fr 2.1fr; gap:28px; }
 
 /* TOC */
 .toc{
@@ -244,7 +240,6 @@ a:hover{opacity:.92}
 .toc ol{ margin:0; padding-left:18px; display:grid; gap:6px; }
 .toc a{ color:#cfd7e7; }
 .toc a:hover{ color:#fff; }
-.toc-footer{ border-top:1px solid var(--border); margin-top:12px; padding-top:12px; display:grid; gap:6px; }
 
 /* Content */
 .legal-content{
