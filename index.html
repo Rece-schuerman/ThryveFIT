@@ -22,8 +22,6 @@
         <img class="brand-icon" src="assets/ICON-BLUE.png" width="36" height="36" alt="ThryveFit icon"/>
         <img class="brand-wordmark" src="assets/WORDMARK-WHITE.png" width="150" height="28" alt="ThryveFit"/>
       </a>
-
-      <!-- Requested header nav -->
       <nav class="nav" aria-label="Primary">
         <a href="./support.html">Support</a>
         <a href="./terms.html">Terms of Service</a>
@@ -111,8 +109,38 @@
 
         <div class="premium-cta">
           <div class="price">Free trial available.</div>
-          <div class="price-sub">Monthly $9.99 · Annual $79.99</div>
-          <a class="btn btn-secondary" href="#download">Learn More</a>
+          <div class="price-sub">Monthly <strong>$9.99</strong></div>
+          <button id="learnMoreBtn"
+                  class="btn btn-secondary"
+                  aria-expanded="false"
+                  aria-controls="learnMorePanel">
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Collapsible learn-more panel -->
+      <div id="learnMorePanel" class="learnmore-panel" hidden>
+        <div class="container learnmore-inner" role="region" aria-label="More about Premium">
+          <div class="learn-cols">
+            <div>
+              <h3>What you get</h3>
+              <ul>
+                <li>Unlimited meal logging & voice entries</li>
+                <li>Advanced analytics with weekly summaries</li>
+                <li>Custom workout builder & saved routines</li>
+                <li>Priority support</li>
+              </ul>
+            </div>
+            <div>
+              <h3>How billing works</h3>
+              <p>Monthly subscription billed via your Apple ID. Cancel anytime in iOS Settings &gt; Subscriptions. Your trial converts to $9.99/month unless cancelled at least 24 hours before it ends.</p>
+            </div>
+            <div>
+              <h3>Privacy</h3>
+              <p>We use privacy‑first defaults. Your data stays encrypted and you control exports and deletions at any time.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -126,19 +154,13 @@
     </section>
   </main>
 
-  <!-- ===== Footer ===== -->
+  <!-- ===== Footer (no duplicate nav row) ===== -->
   <footer class="site-footer">
     <div class="container footer-top">
       <a class="brand brand-footer" href="./index.html" aria-label="ThryveFit Home">
         <img class="brand-icon" src="assets/ICON-BLUE.png" width="28" height="28" alt="ThryveFit icon"/>
         <img class="brand-wordmark" src="assets/WORDMARK-WHITE.png" width="120" height="22" alt="ThryveFit"/>
       </a>
-
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="./support.html">Support</a>
-        <a href="./terms.html">Terms of Service</a>
-        <a href="./privacy.html">Privacy</a>
-      </nav>
     </div>
 
     <div class="container footer-grid">
@@ -156,7 +178,7 @@
       </div>
       <div>
         <h4>Pricing</h4>
-        <p class="subtext">Monthly $9.99 • Annual $79.99. Cancel anytime in iOS Settings. Prices may vary by region.</p>
+        <p class="subtext">Monthly $9.99. Cancel anytime in iOS Settings. Prices may vary by region.</p>
       </div>
       <div>
         <h4>Legal</h4>
@@ -169,6 +191,26 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Learn More toggle (accessible)
+    const btn = document.getElementById('learnMoreBtn');
+    const panel = document.getElementById('learnMorePanel');
+
+    btn.addEventListener('click', () => {
+      const open = !panel.hasAttribute('hidden');
+      if (open) {
+        panel.setAttribute('hidden', '');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Learn More';
+      } else {
+        panel.removeAttribute('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'Hide Details';
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  </script>
 </body>
 </html>
