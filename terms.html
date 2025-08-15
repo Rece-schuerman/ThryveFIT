@@ -25,11 +25,24 @@
         <a href="./terms.html" aria-current="page">Terms of Service</a>
         <a href="./privacy.html">Privacy</a>
       </nav>
+      <button class="hamburger" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileNav" class="mobile-nav" hidden>
+      <nav class="mobile-nav-inner" aria-label="Mobile">
+        <a href="./index.html">Home</a>
+        <a href="./support.html">Support</a>
+        <a href="./terms.html" aria-current="page">Terms of Service</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- Hero (no PDF button) -->
+    <!-- Hero -->
     <section class="hero hero--legal">
       <div class="container hero-legal-inner">
         <div class="hero-legal-copy">
@@ -43,7 +56,7 @@
     <!-- Legal layout -->
     <section class="legal-wrap">
       <div class="container legal-grid">
-        <!-- TOC (no bottom navigation links) -->
+        <!-- TOC -->
         <aside class="toc" aria-label="Table of contents">
           <h2 class="toc-title">Table of contents</h2>
           <ol>
@@ -174,6 +187,34 @@
     const d = new Date();
     const fmt = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
     document.getElementById('effDate').textContent = `Effective Date: ${fmt}`;
+
+    // Mobile menu toggle
+    (function(){
+      const btn = document.getElementById('menuToggle');
+      const panel = document.getElementById('mobileNav');
+      if(!btn || !panel) return;
+
+      function closeMenu(){
+        panel.setAttribute('hidden','');
+        panel.dataset.open = 'false';
+        btn.setAttribute('aria-expanded','false');
+        btn.setAttribute('aria-label','Open navigation');
+        document.body.classList.remove('no-scroll');
+      }
+      function openMenu(){
+        panel.removeAttribute('hidden');
+        panel.dataset.open = 'true';
+        btn.setAttribute('aria-expanded','true');
+        btn.setAttribute('aria-label','Close navigation');
+        document.body.classList.add('no-scroll');
+      }
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        isOpen ? closeMenu() : openMenu();
+      });
+      document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+      panel.addEventListener('click', (e) => { if(e.target.tagName === 'A') closeMenu(); });
+    })();
   </script>
 </body>
 </html>
