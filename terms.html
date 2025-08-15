@@ -13,7 +13,7 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Header (same as homepage/support) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="./index.html" aria-label="ThryveFit Home">
@@ -29,7 +29,7 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
+    <!-- Hero (no PDF button) -->
     <section class="hero hero--legal">
       <div class="container hero-legal-inner">
         <div class="hero-legal-copy">
@@ -37,16 +37,13 @@
           <p class="hero-sub">By using ThryveFit, you agree to these terms. Please read them carefully.</p>
           <div class="effdate" id="effDate">Effective Date: —</div>
         </div>
-        <div class="hero-legal-cta">
-          <a class="btn btn-secondary" href="#" aria-label="Download Terms as PDF">Download PDF</a>
-        </div>
       </div>
     </section>
 
     <!-- Legal layout -->
     <section class="legal-wrap">
       <div class="container legal-grid">
-        <!-- TOC -->
+        <!-- TOC (no bottom navigation links) -->
         <aside class="toc" aria-label="Table of contents">
           <h2 class="toc-title">Table of contents</h2>
           <ol>
@@ -62,12 +59,6 @@
             <li><a href="#changes">Changes to Terms</a></li>
             <li><a href="#contact">Contact</a></li>
           </ol>
-
-          <div class="toc-footer">
-            <a href="./support.html">Support</a>
-            <a href="./terms.html" aria-current="page">Terms</a>
-            <a href="./privacy.html">Privacy</a>
-          </div>
         </aside>
 
         <!-- Content -->
@@ -141,7 +132,7 @@
     </section>
   </main>
 
-  <!-- Footer (monthly only; no duplicate nav row) -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-top">
       <a class="brand brand-footer" href="./index.html" aria-label="ThryveFit Home">
@@ -180,7 +171,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Show a nice effective date (today or set manually)
     const d = new Date();
     const fmt = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
     document.getElementById('effDate').textContent = `Effective Date: ${fmt}`;
