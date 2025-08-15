@@ -11,102 +11,161 @@
   <link rel="preload" href="assets/WORDMARK-WHITE.png" as="image"/>
   <link rel="stylesheet" href="assets/styles/thryve.css"/>
 </head>
+
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
+  <!-- ===== Header ===== -->
   <header class="site-header">
-    <div class="container">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html" aria-label="ThryveFit Home">
+        <img class="brand-icon" src="assets/ICON-BLUE.png" width="36" height="36" alt="ThryveFit icon"/>
+        <img class="brand-wordmark" src="assets/WORDMARK-WHITE.png" width="150" height="28" alt="ThryveFit"/>
+      </a>
+
+      <!-- Requested header nav -->
       <nav class="nav" aria-label="Primary">
-        <a class="brand" href="./index.html" aria-label="ThryveFit Home">
-          <img src="assets/ICON-BLUE.png" width="44" height="44" alt="ThryveFit icon">
-        </a>
-        <div class="wordmark">
-          <img src="assets/WORDMARK-WHITE.png" width="200" height="40" alt="ThryveFit">
-        </div>
-        <div class="nav-cta">
-          <!-- Replace with real App Store link when ready -->
-          <a class="badge" href="#download" aria-disabled="true"> App Store</a>
-        </div>
+        <a href="./support.html">Support</a>
+        <a href="./terms.html">Terms of Service</a>
+        <a href="./privacy.html">Privacy</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <div class="container center narrow">
-      <section class="hero">
-        <h1>Unlock Your Potential</h1>
-        <p class="maxch">Transform your training and nutrition into actionable insights. ThryveFit gives you clarity to reach your goals faster.</p>
-      </section>
-    </div>
-
-    <div class="container">
-      <!-- Compact Feature Cards -->
-      <section class="cards" aria-label="Highlights">
-        <article class="card">
-          <h3>AI Meal Plans</h3>
-          <p>Personalized macros and meals tuned to your targets, preferences, and constraints.</p>
-          <ul class="features">
-            <li>Adapts weekly to progress</li>
-            <li>Respects allergies & dislikes</li>
-            <li>One‑tap grocery list</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Voice Logging</h3>
-          <p>Log meals hands‑free in seconds for more accurate tracking.</p>
-          <ul class="features">
-            <li>Under 5 seconds per entry</li>
-            <li>Works offline; syncs later</li>
-            <li>Natural language friendly</li>
-          </ul>
-        </article>
-
-        <!-- Advanced Analytics (clean, no image) -->
-        <article class="card">
-          <h3>Advanced Analytics</h3>
-          <p>Clear progress views and weekly insights engineered for smarter decisions.</p>
-          <ul class="features">
-            <li>Progress charts for workouts & nutrition</li>
-            <li>Trend detection and readiness cues</li>
-            <li>Weekly summaries that keep you on track</li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- Premium (single panel) -->
-      <section aria-label="Premium">
-        <div class="panel">
-          <h2>Premium Features</h2>
-          <div class="list">
-            <div class="item"><span>•</span><div>Custom workouts with saved routines</div></div>
-            <div class="item"><span>•</span><div>Macro rings, trend lines, weekly summaries</div></div>
-            <div class="item"><span>•</span><div>Secure storage with privacy‑first defaults</div></div>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Unlock Your Potential</h1>
+          <p>Transform your training and nutrition into actionable insights with AI‑powered clarity.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#download">Try Free Trial</a>
           </div>
         </div>
-      </section>
 
-      <!-- CTA (centered on all screens) -->
-      <div id="download" class="center" style="margin-top:30px; display:flex; flex-direction:column; align-items:center; gap:6px;">
-        <a class="badge" href="#" aria-disabled="true"> App Store</a>
-        <p class="subtext">Requires iOS. Some features require ThryveFit Premium. Free trial available.</p>
+        <!-- Screenshot/device placeholder -->
+        <div class="device">
+          <div class="device-screen">
+            <div class="placeholder">
+              <span>App Screenshot<br/>Placeholder</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- ===== Key Features ===== -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Key Features</h2>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="thumb"><div class="thumb-ph">Screenshot Placeholder</div></div>
+            <h3>AI Meal Plans</h3>
+            <p>Personalized macros and meals tuned to your targets, preferences, and constraints.</p>
+            <ul class="feature-list">
+              <li>Adapts weekly to progress</li>
+              <li>Respects allergies & dislikes</li>
+              <li>One‑tap grocery list</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <div class="thumb"><div class="thumb-ph">Screenshot Placeholder</div></div>
+            <h3>Voice Logging</h3>
+            <p>Log meals hands‑free in seconds for more accurate tracking.</p>
+            <ul class="feature-list">
+              <li>Under 5 seconds per entry</li>
+              <li>Works offline; syncs later</li>
+              <li>Natural language friendly</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <div class="thumb"><div class="thumb-ph">Screenshot Placeholder</div></div>
+            <h3>Advanced Analytics</h3>
+            <p>Clear progress views and weekly insights engineered for smarter decisions.</p>
+            <ul class="feature-list">
+              <li>Progress charts for workouts & nutrition</li>
+              <li>Trend detection and readiness cues</li>
+              <li>Weekly summaries that keep you on track</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Premium ===== -->
+    <section class="premium">
+      <div class="container premium-grid">
+        <div>
+          <h2>Premium Features</h2>
+          <ul class="bullet-list">
+            <li>Custom workouts with saved routines</li>
+            <li>Macro rings, trend lines, weekly summaries</li>
+            <li>Secure storage with privacy‑first defaults</li>
+          </ul>
+        </div>
+
+        <div class="premium-cta">
+          <div class="price">Free trial available.</div>
+          <div class="price-sub">Monthly $9.99 · Annual $79.99</div>
+          <a class="btn btn-secondary" href="#download">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== App Store CTA ===== -->
+    <section id="download" class="store-cta">
+      <a class="badge" href="#" aria-disabled="true"> App Store</a>
+      <p class="subtext">
+        Requires iOS. Some features require ThryveFit Premium. Free trial available.
+      </p>
+    </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div><h4>Company</h4>
-          <a href="./support.html">Support</a><br/>
-          <a href="./terms.html">Terms</a><br/>
-          <a href="./privacy.html">Privacy</a>
-        </div>
-        <div><h4>Contact</h4><a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></div>
-        <div><h4>Pricing</h4><p class="subtext">Monthly $9.99 • Annual $79.99. Cancel anytime in iOS Settings. Prices may vary by region.</p></div>
-        <div><h4>Legal</h4><p class="subtext">Subscriptions renew automatically unless cancelled at least 24 hours before period end.</p></div>
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="brand brand-footer" href="./index.html" aria-label="ThryveFit Home">
+        <img class="brand-icon" src="assets/ICON-BLUE.png" width="28" height="28" alt="ThryveFit icon"/>
+        <img class="brand-wordmark" src="assets/WORDMARK-WHITE.png" width="120" height="22" alt="ThryveFit"/>
+      </a>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="./support.html">Support</a>
+        <a href="./terms.html">Terms of Service</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+    </div>
+
+    <div class="container footer-grid">
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="./support.html">Support</a></li>
+          <li><a href="./terms.html">Terms of Service</a></li>
+          <li><a href="./privacy.html">Privacy</a></li>
+        </ul>
       </div>
-      <div class="copy">© <span id="year"></span> ThryveFit. All rights reserved.</div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="mailto:thryvefitllc@gmail.com">thryvefitllc@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Pricing</h4>
+        <p class="subtext">Monthly $9.99 • Annual $79.99. Cancel anytime in iOS Settings. Prices may vary by region.</p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <p class="subtext">Subscriptions renew automatically unless cancelled at least 24 hours before period end.</p>
+      </div>
+    </div>
+
+    <div class="container footer-copy">
+      © <span id="year"></span> ThryveFit. All rights reserved.
     </div>
   </footer>
 
